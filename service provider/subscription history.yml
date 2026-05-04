@@ -1,0 +1,192 @@
+info:
+  name: subscription history
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{baseUrl}}/service-providers/me/subscription/history?page=1&limit=20"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: limit
+      value: "20"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/service-providers/me/subscription/history?page=1&limit=20"
+      method: GET
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: limit
+          value: "20"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "2805"
+        - name: etag
+          value: W/"af5-Syg4PhxwuMQtwwNAF8ydLJXLz7g"
+        - name: date
+          value: Mon, 04 May 2026 14:24:05 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Subscription history retrieved successfully",
+            "data": {
+              "subscriptions": [
+                {
+                  "_id": "69f8a2179cd8f78d7f291464",
+                  "ownerId": "69f5bc8cdca3fe40cfa7b90a",
+                  "ownerType": "service_provider",
+                  "planId": {
+                    "_id": "69f348fc64be414c8890f109",
+                    "name": "Bethelhem Habtamu",
+                    "slug": "bethelhem-habtamu",
+                    "features": [
+                      "analytics",
+                      "priority_support",
+                      "custom_domain",
+                      "advanced_analytics"
+                    ],
+                    "price": 1000,
+                    "currency": "USD",
+                    "billingInterval": "monthly",
+                    "targetAudience": "service_provider",
+                    "sortOrder": 0,
+                    "isActive": true,
+                    "createdAt": "2026-04-30T12:20:12.710Z",
+                    "updatedAt": "2026-04-30T12:20:12.710Z",
+                    "__v": 0
+                  },
+                  "status": "active",
+                  "startedAt": "2026-05-04T13:41:43.697Z",
+                  "createdAt": "2026-05-04T13:41:43.700Z",
+                  "updatedAt": "2026-05-04T13:41:43.700Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69f89d489cd8f78d7f2913d5",
+                  "ownerId": "69f5bc8cdca3fe40cfa7b90a",
+                  "ownerType": "service_provider",
+                  "planId": {
+                    "_id": "69f348fc64be414c8890f109",
+                    "name": "Bethelhem Habtamu",
+                    "slug": "bethelhem-habtamu",
+                    "features": [
+                      "analytics",
+                      "priority_support",
+                      "custom_domain",
+                      "advanced_analytics"
+                    ],
+                    "price": 1000,
+                    "currency": "USD",
+                    "billingInterval": "monthly",
+                    "targetAudience": "service_provider",
+                    "sortOrder": 0,
+                    "isActive": true,
+                    "createdAt": "2026-04-30T12:20:12.710Z",
+                    "updatedAt": "2026-04-30T12:20:12.710Z",
+                    "__v": 0
+                  },
+                  "status": "cancelled",
+                  "startedAt": "2026-05-04T13:21:12.339Z",
+                  "createdAt": "2026-05-04T13:21:12.342Z",
+                  "updatedAt": "2026-05-04T13:41:43.583Z",
+                  "__v": 0,
+                  "cancelledAt": "2026-05-04T13:41:43.583Z"
+                },
+                {
+                  "_id": "69f89cff9cd8f78d7f2913c8",
+                  "ownerId": "69f5bc8cdca3fe40cfa7b90a",
+                  "ownerType": "service_provider",
+                  "planId": {
+                    "_id": "69f348fc64be414c8890f109",
+                    "name": "Bethelhem Habtamu",
+                    "slug": "bethelhem-habtamu",
+                    "features": [
+                      "analytics",
+                      "priority_support",
+                      "custom_domain",
+                      "advanced_analytics"
+                    ],
+                    "price": 1000,
+                    "currency": "USD",
+                    "billingInterval": "monthly",
+                    "targetAudience": "service_provider",
+                    "sortOrder": 0,
+                    "isActive": true,
+                    "createdAt": "2026-04-30T12:20:12.710Z",
+                    "updatedAt": "2026-04-30T12:20:12.710Z",
+                    "__v": 0
+                  },
+                  "status": "cancelled",
+                  "startedAt": "2026-05-04T13:19:59.221Z",
+                  "createdAt": "2026-05-04T13:19:59.226Z",
+                  "updatedAt": "2026-05-04T13:21:12.220Z",
+                  "__v": 0,
+                  "cancelledAt": "2026-05-04T13:21:12.219Z"
+                },
+                {
+                  "_id": "69f5c887dca3fe40cfa7b94e",
+                  "ownerId": "69f5bc8cdca3fe40cfa7b90a",
+                  "ownerType": "service_provider",
+                  "planId": {
+                    "_id": "69f348fc64be414c8890f109",
+                    "name": "Bethelhem Habtamu",
+                    "slug": "bethelhem-habtamu",
+                    "features": [
+                      "analytics",
+                      "priority_support",
+                      "custom_domain",
+                      "advanced_analytics"
+                    ],
+                    "price": 1000,
+                    "currency": "USD",
+                    "billingInterval": "monthly",
+                    "targetAudience": "service_provider",
+                    "sortOrder": 0,
+                    "isActive": true,
+                    "createdAt": "2026-04-30T12:20:12.710Z",
+                    "updatedAt": "2026-04-30T12:20:12.710Z",
+                    "__v": 0
+                  },
+                  "status": "cancelled",
+                  "startedAt": "2026-05-02T09:48:55.539Z",
+                  "createdAt": "2026-05-02T09:48:55.548Z",
+                  "updatedAt": "2026-05-04T13:19:59.105Z",
+                  "__v": 0,
+                  "cancelledAt": "2026-05-04T13:19:59.104Z"
+                }
+              ],
+              "total": 4,
+              "page": "1",
+              "limit": "20"
+            }
+          }

@@ -10,11 +10,13 @@ http:
     type: json
     data: |-
       {
-        "organizationName": "Addis Events Co",
-        "email": "organizer@addisevents.com",
+        "organizationName": "Addis Events Com",
+        "email": "organizer@addiseventss.com",
         "password": "Organizer1234!",
         "type": "company",
-        "description": "Premier event organizer in Addis Ababa"
+        "description": "Premier event organizer in Addis Ababa",
+        "logo": "https://example.com/logo.png",
+        "coverImage": "https://example.com/image.png"
       }
   auth: inherit
 
