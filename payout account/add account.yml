@@ -1,0 +1,84 @@
+info:
+  name: add account
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/payout-accounts"
+  body:
+    type: json
+    data: |-
+      {
+        "accountType": "bank",
+        "accountName": "Addis Events Co",
+        "accountNumber": "1000123456789",
+        "bankName": "Commercial Bank of Ethiopia",
+        "isPrimary": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/payout-accounts"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "accountType": "bank",
+            "accountName": "Addis Events Co",
+            "accountNumber": "1000123456789",
+            "bankName": "Commercial Bank of Ethiopia",
+            "isPrimary": true
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "427"
+        - name: etag
+          value: W/"1ab-2s662DzXQTSBM0nMKaO8tKpEkkM"
+        - name: date
+          value: Sat, 02 May 2026 07:57:13 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Payout account created successfully",
+            "data": {
+              "account": {
+                "ownerId": "69f51277c27668f00b9db20b",
+                "ownerType": "organizer",
+                "accountType": "bank",
+                "accountName": "Addis Events Co",
+                "accountNumber": "1000123456789",
+                "bankName": "Commercial Bank of Ethiopia",
+                "isVerified": false,
+                "isPrimary": true,
+                "_id": "69f5ae59dceb3cf23324120d",
+                "createdAt": "2026-05-02T07:57:13.130Z",
+                "updatedAt": "2026-05-02T07:57:13.130Z",
+                "__v": 0
+              }
+            }
+          }

@@ -1,0 +1,102 @@
+info:
+  name: ticket-tier for event
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{baseUrl}}/events/69f51871c27668f00b9db24f/occurrences/69f518f2c27668f00b9db266/ticket-tiers"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/events/69f5113c5f1f6a41791fb5a1/occurrences/69f519e4c27668f00b9db29a/ticket-tiers"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "1140"
+        - name: etag
+          value: W/"474-x+B+Wve2fwY3RWJRe+P5o1nMteE"
+        - name: date
+          value: Sat, 02 May 2026 07:18:45 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Ticket tiers retrieved successfully",
+            "data": {
+              "tiers": [
+                {
+                  "limits": {
+                    "perOrder": 10,
+                    "perUser": 4
+                  },
+                  "sales": {
+                    "opensAt": "2025-11-01T00:00:00.000Z",
+                    "closesAt": "2025-12-19T23:59:00.000Z"
+                  },
+                  "_id": "69f519fbc27668f00b9db2b7",
+                  "eventId": "69f51871c27668f00b9db24f",
+                  "occurrenceId": "69f519e4c27668f00b9db29a",
+                  "name": "General Admission",
+                  "slug": "general-admission",
+                  "description": "Standard entry ticket",
+                  "pricingMode": "paid",
+                  "currency": "ETB",
+                  "priceMinor": 50000,
+                  "suggestedAmountsMinor": [],
+                  "inventoryType": "capped",
+                  "quantity": 4000,
+                  "sortOrder": 1,
+                  "status": "active",
+                  "createdAt": "2026-05-01T21:24:11.748Z",
+                  "updatedAt": "2026-05-01T21:24:11.748Z",
+                  "__v": 0
+                },
+                {
+                  "limits": {
+                    "perOrder": 4,
+                    "perUser": 2
+                  },
+                  "_id": "69f519f2c27668f00b9db2aa",
+                  "eventId": "69f51871c27668f00b9db24f",
+                  "occurrenceId": "69f519e4c27668f00b9db29a",
+                  "name": "VIP",
+                  "slug": "vip",
+                  "description": "VIP access with premium seating and backstage pass",
+                  "pricingMode": "paid",
+                  "currency": "ETB",
+                  "priceMinor": 200000,
+                  "suggestedAmountsMinor": [],
+                  "inventoryType": "capped",
+                  "quantity": 500,
+                  "sortOrder": 2,
+                  "status": "active",
+                  "createdAt": "2026-05-01T21:24:02.403Z",
+                  "updatedAt": "2026-05-01T21:24:02.403Z",
+                  "__v": 0
+                }
+              ]
+            }
+          }

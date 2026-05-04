@@ -1,0 +1,106 @@
+info:
+  name: update event
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/dashboard/events/69f51871c27668f00b9db24f"
+  body:
+    type: json
+    data: |-
+      {
+        "shortDescription": "Updated: Addis's biggest music festival returns!"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/dashboard/events/69f51871c27668f00b9db24f"
+      method: PATCH
+      body:
+        type: json
+        data: |-
+          {
+            "shortDescription": "Updated: Addis's biggest music festival returns!"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "1050"
+        - name: etag
+          value: W/"41a-dt1TNo1EZdaaCBfr3ZRg5l6O9B0"
+        - name: date
+          value: Sat, 02 May 2026 07:27:17 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Event updated successfully",
+            "data": {
+              "event": {
+                "_id": "69f51871c27668f00b9db24f",
+                "organizerId": "69f51277c27668f00b9db20b",
+                "title": "Addis Music Festival 2025",
+                "slug": "addis-music-festival-2025",
+                "description": "The biggest music festival in Addis Ababa featuring top local and international artists.",
+                "shortDescription": "Updated: Addis's biggest music festival returns!",
+                "timezone": "Africa/Addis_Ababa",
+                "categoryId": "69f5113c5f1f6a41791fb5a1",
+                "tags": [
+                  "music",
+                  "festival",
+                  "live"
+                ],
+                "sponsors": [],
+                "media": {
+                  "image": "https://example.com/festival-cover.jpg",
+                  "gallery": []
+                },
+                "pricing": {
+                  "display": {
+                    "fromMinor": 50000,
+                    "toMinor": 200000,
+                    "label": "Starting at"
+                  },
+                  "mode": "paid",
+                  "currency": "ETB",
+                  "suggestedAmountsMinor": [],
+                  "taxInclusive": false,
+                  "feesPaidBy": "ATTENDEE"
+                },
+                "status": "published",
+                "visibility": "public",
+                "kind": "ticketed",
+                "recurrence": {
+                  "enabled": false,
+                  "exceptions": []
+                },
+                "createdAt": "2026-05-01T21:17:37.673Z",
+                "updatedAt": "2026-05-02T07:27:16.104Z",
+                "__v": 0,
+                "nextOccurrence": "2026-12-20T18:00:00.000Z",
+                "publishedAt": "2026-05-01T21:24:19.570Z"
+              }
+            }
+          }

@@ -1,0 +1,72 @@
+info:
+  name: phone otp login
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{baseUrl}}/auth/login/phone-otp"
+  body:
+    type: json
+    data: |-
+      {
+        "phone": "+251942049329",
+        "otp": "597110",
+        "role": "user"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/auth/login/phone-otp"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "phone": "+251942049329",
+            "otp": "597110",
+            "role": "user"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: authorization
+          value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjlmNTFhODhjMjc2NjhmMDBiOWRiMmM3IiwidHlwZSI6InVzZXIiLCJpYXQiOjE3Nzc3MDk1NjgsImV4cCI6MTc3NzcxMDQ2OH0.GE6csKIh3i0q1F5ekZWQbQPLeQsKMjocE1_KioS4tu8
+        - name: refreshtoken
+          value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjlmNTFhODhjMjc2NjhmMDBiOWRiMmM3IiwidHlwZSI6InVzZXIiLCJpc1JlZnJlc2giOnRydWUsImlhdCI6MTc3NzcwOTU2OCwiZXhwIjoxNzc4MzE0MzY4fQ.7C_sLh96cyqz-PNLHqUdBRTUaaIv_WoHAKuCkVHYsnQ
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "496"
+        - name: etag
+          value: W/"1f0-0Rmb7QcZatRbrhva5+5UyaY9t4Q"
+        - name: date
+          value: Sat, 02 May 2026 08:12:49 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Login successful",
+            "data": {
+              "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjlmNTFhODhjMjc2NjhmMDBiOWRiMmM3IiwidHlwZSI6InVzZXIiLCJpYXQiOjE3Nzc3MDk1NjgsImV4cCI6MTc3NzcxMDQ2OH0.GE6csKIh3i0q1F5ekZWQbQPLeQsKMjocE1_KioS4tu8",
+              "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjlmNTFhODhjMjc2NjhmMDBiOWRiMmM3IiwidHlwZSI6InVzZXIiLCJpc1JlZnJlc2giOnRydWUsImlhdCI6MTc3NzcwOTU2OCwiZXhwIjoxNzc4MzE0MzY4fQ.7C_sLh96cyqz-PNLHqUdBRTUaaIv_WoHAKuCkVHYsnQ"
+            }
+          }

@@ -1,0 +1,23 @@
+info:
+  name: signup
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/auth/super-admin/signup"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Platform Admin",
+        "email": "admin@platform.com",
+        "password": "Admin1234!"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

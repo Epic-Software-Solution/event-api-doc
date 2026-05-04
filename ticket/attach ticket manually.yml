@@ -1,0 +1,27 @@
+info:
+  name: attach ticket manually
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/tickets"
+  body:
+    type: json
+    data: |-
+      {
+      "eventId": "69f51871c27668f00b9db24f",
+        "occurrenceId": "69f518f2c27668f00b9db266",
+        "ticketTierId": "69f51978c27668f00b9db276",
+        "paymentHistoryId": "{{paymentHistoryId}}",
+        "transactionId": "TXN-MANUAL-001",
+        "entranceTime": "2025-12-20T18:00:00.000Z",
+        "expireDate": "2025-12-20T23:00:00.000Z"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

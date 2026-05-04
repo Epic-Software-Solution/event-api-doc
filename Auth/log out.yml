@@ -1,0 +1,49 @@
+info:
+  name: log out
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/auth/logout"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/auth/logout"
+      method: DELETE
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "64"
+        - name: etag
+          value: W/"40-JIdvWyxZ7MqXNpNk0+ulk5X9rXE"
+        - name: date
+          value: Sat, 02 May 2026 08:37:58 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Logged out successfully",
+            "data": null
+          }

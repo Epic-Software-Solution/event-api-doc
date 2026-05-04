@@ -1,0 +1,33 @@
+info:
+  name: login
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/auth/login"
+  body:
+    type: json
+    data: |-
+      {
+        "phone":"+251942049329",
+        "password": "User1234!",
+        "role": "user"
+      //   "email": "organizer@addisevents.com",
+      //   "password": "Organizer1234!",
+      //   "role":"organizer"
+      //   "email": "admin@platform.com",
+      //   "password": "Admin1234!",
+      //   "role":"super_admin"
+        
+      //   "email": "sp@addissound.com",
+      //   "password": "SProvider1234!",
+      //   "role":"service_provider"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

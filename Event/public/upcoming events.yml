@@ -1,0 +1,359 @@
+info:
+  name: upcoming events
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}/events/upcoming"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/events/upcoming"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "6731"
+        - name: etag
+          value: W/"1a4b-uF332U7OnfF+VC0qFQ8rOLaPfX0"
+        - name: date
+          value: Sat, 02 May 2026 07:10:46 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Upcoming events retrieved successfully",
+            "data": {
+              "items": [
+                {
+                  "_id": "69f0667ae47f721570f674e2",
+                  "organizerId": {
+                    "_id": "698dd69273b7ac05ec213607",
+                    "organizationName": "Epic",
+                    "slug": "epic"
+                  },
+                  "title": "ethio jazz",
+                  "slug": "spa-day",
+                  "description": "Jazz night with the Legend",
+                  "timeZone": "Africa/Addis_Ababa",
+                  "categoryId": {
+                    "_id": "69e8ca2bcc91a696d383aeaf",
+                    "name": "music",
+                    "slug": "music"
+                  },
+                  "tags": [
+                    "jazz",
+                    "habesha",
+                    "mule"
+                  ],
+                  "media": {
+                    "image": "https://ethiolotteryimages.s3.us-east-1.amazonaws.com/events/media/images/7c39867d-81de-4ad2-8baa-5a9335377f1d.jpg",
+                    "bannerImage": "",
+                    "gallery": [
+                      "https://ethiolotteryimages.s3.us-east-1.amazonaws.com/events/media/images/d5913ab4-4400-4a87-acf5-11de4c4a0b40.png",
+                      "https://ethiolotteryimages.s3.us-east-1.amazonaws.com/events/media/images/b5a0f086-e2f6-49db-a411-49b792b9208f.png"
+                    ],
+                    "videoUrl": ""
+                  },
+                  "pricing": {
+                    "mode": "paid",
+                    "currency": "ETB",
+                    "display": {
+                      "fromMinor": 200000,
+                      "toMinor": 200000,
+                      "label": "From 2000 ETB"
+                    },
+                    "suggestedAmountsMinor": [
+                      200000
+                    ],
+                    "taxInclusive": false,
+                    "feesPaidBy": "ATTENDEE"
+                  },
+                  "status": "published",
+                  "visibility": "public",
+                  "kind": "ticketed",
+                  "recurrence": {
+                    "enabled": false,
+                    "exceptions": []
+                  },
+                  "createdAt": "2026-04-28T07:49:14.667Z",
+                  "updatedAt": "2026-04-30T08:35:37.547Z",
+                  "__v": 0,
+                  "nextOccurrence": "2026-05-07T07:59:00.000Z",
+                  "publishedAt": "2026-04-30T08:35:37.547Z",
+                  "sponsors": [
+                    {
+                      "name": "frehiwot plc",
+                      "image": "https://ethiolotteryimages.s3.us-east-1.amazonaws.com/events/media/images/fa5eb512-d9bf-411f-8c59-4cfd89946301.png"
+                    }
+                  ],
+                  "shortDescription": "Jazz night",
+                  "organizationName": "Epic",
+                  "categoryName": "music"
+                },
+                {
+                  "_id": "69f0608ae47f721570f67390",
+                  "organizerId": {
+                    "_id": "698dd69273b7ac05ec213607",
+                    "organizationName": "Epic",
+                    "slug": "epic"
+                  },
+                  "title": "deblue  event",
+                  "slug": "deblue-event",
+                  "description": "lets get blue TOGETHAAA",
+                  "timeZone": "Africa/Addis_Ababa",
+                  "categoryId": {
+                    "_id": "69e8ca2bcc91a696d383aeaf",
+                    "name": "music",
+                    "slug": "music"
+                  },
+                  "tags": [
+                    "blue",
+                    "rnb",
+                    "menz",
+                    "benz"
+                  ],
+                  "media": {
+                    "image": "https://ethiolotteryimages.s3.us-east-1.amazonaws.com/events/media/images/96bf2f2e-db6b-4434-8b7b-4d8d5a4c9c77.jpg",
+                    "bannerImage": "",
+                    "gallery": [
+                      "https://ethiolotteryimages.s3.us-east-1.amazonaws.com/events/media/images/b7822de3-50dc-4eb7-9d5a-ce573472cfc5.png",
+                      "https://ethiolotteryimages.s3.us-east-1.amazonaws.com/events/media/images/07ce92c3-1bba-41a9-a88f-0c6edde240bf.png"
+                    ],
+                    "videoUrl": ""
+                  },
+                  "pricing": {
+                    "mode": "paid",
+                    "currency": "ETB",
+                    "display": {
+                      "fromMinor": 100000,
+                      "toMinor": 100000,
+                      "label": "From 1000 ETB"
+                    },
+                    "suggestedAmountsMinor": [
+                      100000
+                    ],
+                    "taxInclusive": false,
+                    "feesPaidBy": "ATTENDEE"
+                  },
+                  "status": "published",
+                  "visibility": "public",
+                  "kind": "ticketed",
+                  "recurrence": {
+                    "enabled": false,
+                    "exceptions": []
+                  },
+                  "createdAt": "2026-04-28T07:23:54.816Z",
+                  "updatedAt": "2026-04-30T08:33:20.610Z",
+                  "__v": 0,
+                  "nextOccurrence": "2026-05-14T07:24:00.000Z",
+                  "publishedAt": "2026-04-30T08:33:20.609Z",
+                  "shortDescription": "blue menz",
+                  "sponsors": [
+                    {
+                      "name": "frehiwot plc",
+                      "image": "https://ethiolotteryimages.s3.us-east-1.amazonaws.com/events/media/images/a4f3e4fc-d7f9-4356-8306-b70309a3472f.png"
+                    }
+                  ],
+                  "organizationName": "Epic",
+                  "categoryName": "music"
+                },
+                {
+                  "_id": "69f1f2b60aada6c35f544ab4",
+                  "organizerId": {
+                    "_id": "698dd69273b7ac05ec213607",
+                    "organizationName": "Epic",
+                    "slug": "epic"
+                  },
+                  "title": "Addis Music Festival 2026",
+                  "slug": "addis-music-festival-2026",
+                  "description": "A full-day live music experience.",
+                  "shortDescription": "Live music festival",
+                  "timeZone": "Africa/Addis_Ababa",
+                  "categoryId": null,
+                  "tags": [],
+                  "media": {
+                    "image": "https://cdn.example.com/events/amf-cover.jpg",
+                    "bannerImage": "https://cdn.example.com/events/amf-banner.jpg",
+                    "gallery": [
+                      "https://cdn.example.com/events/amf-1.jpg",
+                      "https://cdn.example.com/events/amf-2.jpg"
+                    ],
+                    "videoUrl": "https://cdn.example.com/events/amf-trailer.mp4"
+                  },
+                  "pricing": {
+                    "mode": "paid",
+                    "currency": "ETB",
+                    "display": {
+                      "fromMinor": 50000,
+                      "toMinor": 250000,
+                      "label": "Starting at"
+                    },
+                    "suggestedAmountsMinor": [],
+                    "taxInclusive": false,
+                    "feesPaidBy": "ATTENDEE"
+                  },
+                  "status": "published",
+                  "visibility": "public",
+                  "kind": "ticketed",
+                  "recurrence": {
+                    "enabled": false,
+                    "exceptions": []
+                  },
+                  "createdAt": "2026-04-29T11:59:50.723Z",
+                  "updatedAt": "2026-04-29T12:02:20.697Z",
+                  "__v": 0,
+                  "nextOccurrence": "2026-07-18T15:00:00.000Z",
+                  "publishedAt": "2026-04-29T12:02:20.697Z",
+                  "organizationName": "Epic",
+                  "categoryName": null
+                },
+                {
+                  "_id": "69f1f7b825c33500748f1d96",
+                  "organizerId": {
+                    "_id": "698dd69273b7ac05ec213607",
+                    "organizationName": "Epic",
+                    "slug": "epic"
+                  },
+                  "title": "Addis Music Festival 20267",
+                  "slug": "addis-music-festival-20267",
+                  "description": "A full-day live music experience.",
+                  "shortDescription": "Live music festival",
+                  "timeZone": "Africa/Addis_Ababa",
+                  "categoryId": null,
+                  "tags": [
+                    "music",
+                    "festival",
+                    "live"
+                  ],
+                  "sponsors": [
+                    {
+                      "name": "Ethio Telecom",
+                      "image": "https://cdn.example.com/sponsors/ethio-telecom.png"
+                    },
+                    {
+                      "name": "Dashen Bank",
+                      "image": "https://cdn.example.com/sponsors/dashen-bank.png"
+                    }
+                  ],
+                  "media": {
+                    "image": "https://cdn.example.com/events/amf-cover.jpg",
+                    "bannerImage": "https://cdn.example.com/events/amf-banner.jpg",
+                    "gallery": [
+                      "https://cdn.example.com/events/amf-1.jpg",
+                      "https://cdn.example.com/events/amf-2.jpg"
+                    ],
+                    "videoUrl": "https://cdn.example.com/events/amf-trailer.mp4"
+                  },
+                  "pricing": {
+                    "mode": "paid",
+                    "currency": "ETB",
+                    "display": {
+                      "fromMinor": 50000,
+                      "toMinor": 250000,
+                      "label": "Starting at"
+                    },
+                    "suggestedAmountsMinor": [],
+                    "taxInclusive": false,
+                    "feesPaidBy": "ATTENDEE"
+                  },
+                  "status": "published",
+                  "visibility": "public",
+                  "kind": "ticketed",
+                  "recurrence": {
+                    "enabled": false,
+                    "exceptions": []
+                  },
+                  "createdAt": "2026-04-29T12:21:12.762Z",
+                  "updatedAt": "2026-04-29T12:22:28.262Z",
+                  "__v": 0,
+                  "nextOccurrence": "2026-07-18T15:00:00.000Z",
+                  "publishedAt": "2026-04-29T12:22:28.261Z",
+                  "organizationName": "Epic",
+                  "categoryName": null
+                },
+                {
+                  "_id": "69f51871c27668f00b9db24f",
+                  "organizerId": {
+                    "_id": "69f51277c27668f00b9db20b",
+                    "organizationName": "Addis Events Co",
+                    "slug": "addis-events-co"
+                  },
+                  "title": "Addis Music Festival 2025",
+                  "slug": "addis-music-festival-2025",
+                  "description": "The biggest music festival in Addis Ababa featuring top local and international artists.",
+                  "shortDescription": "Addis's premier annual music festival",
+                  "timezone": "Africa/Addis_Ababa",
+                  "categoryId": {
+                    "_id": "69f5113c5f1f6a41791fb5a1",
+                    "name": "Music",
+                    "slug": "music",
+                    "icon": "music-note"
+                  },
+                  "tags": [
+                    "music",
+                    "festival",
+                    "live"
+                  ],
+                  "sponsors": [],
+                  "media": {
+                    "image": "https://example.com/festival-cover.jpg",
+                    "gallery": []
+                  },
+                  "pricing": {
+                    "mode": "paid",
+                    "currency": "ETB",
+                    "display": {
+                      "fromMinor": 50000,
+                      "toMinor": 200000,
+                      "label": "Starting at"
+                    },
+                    "suggestedAmountsMinor": [],
+                    "taxInclusive": false,
+                    "feesPaidBy": "ATTENDEE"
+                  },
+                  "status": "published",
+                  "visibility": "public",
+                  "kind": "ticketed",
+                  "recurrence": {
+                    "enabled": false,
+                    "exceptions": []
+                  },
+                  "createdAt": "2026-05-01T21:17:37.673Z",
+                  "updatedAt": "2026-05-01T21:24:19.570Z",
+                  "__v": 0,
+                  "nextOccurrence": "2026-12-20T18:00:00.000Z",
+                  "publishedAt": "2026-05-01T21:24:19.570Z",
+                  "organizationName": "Addis Events Co",
+                  "categoryName": "Music"
+                }
+              ],
+              "pagination": {
+                "total": 5,
+                "limit": 20,
+                "page": 1
+              }
+            }
+          }

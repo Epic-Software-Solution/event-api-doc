@@ -1,0 +1,21 @@
+info:
+  name: "Validate payment "
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{baseUrl}}/payment-history/validate"
+  body:
+    type: json
+    data: |-
+      {
+        "paymentHistoryId": "69f5fb8cdca3fe40cfa7ba0c"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

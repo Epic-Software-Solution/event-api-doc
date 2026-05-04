@@ -1,0 +1,40 @@
+info:
+  name: add occurrence
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/dashboard/events/69f51871c27668f00b9db24f/occurrences"
+  body:
+    type: json
+    data: |-
+      {
+        "startAt": "2026-12-20T18:00:00.000Z",
+        "endAt": "2026-12-20T23:00:00.000Z",
+        "timezone": "Africa/Addis_Ababa",
+        "capacity": 5000,
+        "venueSnapshot": {
+          "name": "Millennium Hall",
+          "address": "Bole Road",
+          "city": "Addis Ababa",
+          "country": "Ethiopia",
+          "lat": 9.0054,
+          "lng": 38.7636,
+          "venueType": "indoor"
+        },
+        "sales": {
+          "opensAt": "2025-11-01T00:00:00.000Z",
+          "closesAt": "2025-12-19T23:59:00.000Z"
+        },
+        "pricingOverride": {
+          "enabled": false
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

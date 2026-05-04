@@ -1,0 +1,112 @@
+info:
+  name: organizer's events
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/dashboard/events/my-events"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/dashboard/events/my-events"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "1282"
+        - name: etag
+          value: W/"502-ujoB8o307AJEAcLWSRNLjywTAok"
+        - name: date
+          value: Sat, 02 May 2026 07:23:35 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Your events retrieved successfully",
+            "data": {
+              "items": [
+                {
+                  "_id": "69f51871c27668f00b9db24f",
+                  "organizerId": {
+                    "_id": "69f51277c27668f00b9db20b",
+                    "organizationName": "Addis Events Co",
+                    "slug": "addis-events-co"
+                  },
+                  "title": "Addis Music Festival 2025",
+                  "slug": "addis-music-festival-2025",
+                  "description": "The biggest music festival in Addis Ababa featuring top local and international artists.",
+                  "shortDescription": "Addis's premier annual music festival",
+                  "timezone": "Africa/Addis_Ababa",
+                  "categoryId": {
+                    "_id": "69f5113c5f1f6a41791fb5a1",
+                    "name": "Music",
+                    "slug": "music",
+                    "icon": "music-note"
+                  },
+                  "tags": [
+                    "music",
+                    "festival",
+                    "live"
+                  ],
+                  "sponsors": [],
+                  "media": {
+                    "image": "https://example.com/festival-cover.jpg",
+                    "gallery": []
+                  },
+                  "pricing": {
+                    "mode": "paid",
+                    "currency": "ETB",
+                    "display": {
+                      "fromMinor": 50000,
+                      "toMinor": 200000,
+                      "label": "Starting at"
+                    },
+                    "suggestedAmountsMinor": [],
+                    "taxInclusive": false,
+                    "feesPaidBy": "ATTENDEE"
+                  },
+                  "status": "published",
+                  "visibility": "public",
+                  "kind": "ticketed",
+                  "recurrence": {
+                    "enabled": false,
+                    "exceptions": []
+                  },
+                  "createdAt": "2026-05-01T21:17:37.673Z",
+                  "updatedAt": "2026-05-01T21:24:19.570Z",
+                  "__v": 0,
+                  "nextOccurrence": "2026-12-20T18:00:00.000Z",
+                  "publishedAt": "2026-05-01T21:24:19.570Z",
+                  "organizationName": "Addis Events Co",
+                  "categoryName": "Music"
+                }
+              ],
+              "pagination": {
+                "total": 1,
+                "limit": 20,
+                "page": 1
+              }
+            }
+          }

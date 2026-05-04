@@ -1,0 +1,77 @@
+info:
+  name: public profile
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{baseUrl}}/organizers/69f51277c27668f00b9db20b"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/organizers/69f51277c27668f00b9db20b"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "737"
+        - name: etag
+          value: W/"2e1-QeWp8cQw+hnlJKrmZEDWvHEP0wc"
+        - name: date
+          value: Sat, 02 May 2026 20:09:11 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Organizer retrieved successfully",
+            "data": {
+              "organizer": {
+                "_id": "69f51277c27668f00b9db20b",
+                "authUser": "69f51277c27668f00b9db209",
+                "organizationName": "Addis Events Co",
+                "slug": "addis-events-co",
+                "type": "company",
+                "description": "Premier event organizer in Addis Ababa since 2020",
+                "email": "organizer@addisevents.com",
+                "verificationStatus": "unverified",
+                "status": "active",
+                "subscriptionTier": "free",
+                "settings": {
+                  "defaultCurrency": "ETB",
+                  "defaultTimezone": "Africa/Addis_Ababa",
+                  "autoApproveRSVP": false,
+                  "emailNotifications": true,
+                  "publicProfile": true
+                },
+                "createdAt": "2026-05-01T20:52:07.850Z",
+                "updatedAt": "2026-05-02T07:42:46.156Z",
+                "__v": 0,
+                "address": {
+                  "city": "Addis Ababa",
+                  "country": "Ethiopia"
+                },
+                "website": "https://addisevents.com"
+              }
+            }
+          }

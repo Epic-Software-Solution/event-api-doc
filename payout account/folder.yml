@@ -1,0 +1,7 @@
+info:
+  name: payout account
+  type: folder
+  seq: 6
+
+request:
+  auth: inherit

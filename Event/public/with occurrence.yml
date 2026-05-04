@@ -1,0 +1,167 @@
+info:
+  name: with occurrence
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{baseUrl}}/events/69f51871c27668f00b9db24f/with-occurrences"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/events/69f51871c27668f00b9db24f/with-occurrences"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "2493"
+        - name: etag
+          value: W/"9bd-yAHLwFibLeooZ7z6at+be2YcOeQ"
+        - name: date
+          value: Sat, 02 May 2026 07:16:31 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Event retrieved successfully",
+            "data": {
+              "event": {
+                "_id": "69f51871c27668f00b9db24f",
+                "organizerId": {
+                  "_id": "69f51277c27668f00b9db20b",
+                  "organizationName": "Addis Events Co",
+                  "slug": "addis-events-co"
+                },
+                "title": "Addis Music Festival 2025",
+                "slug": "addis-music-festival-2025",
+                "description": "The biggest music festival in Addis Ababa featuring top local and international artists.",
+                "shortDescription": "Addis's premier annual music festival",
+                "timezone": "Africa/Addis_Ababa",
+                "categoryId": {
+                  "_id": "69f5113c5f1f6a41791fb5a1",
+                  "name": "Music",
+                  "slug": "music",
+                  "icon": "music-note"
+                },
+                "tags": [
+                  "music",
+                  "festival",
+                  "live"
+                ],
+                "sponsors": [],
+                "media": {
+                  "image": "https://example.com/festival-cover.jpg",
+                  "gallery": []
+                },
+                "pricing": {
+                  "mode": "paid",
+                  "currency": "ETB",
+                  "display": {
+                    "fromMinor": 50000,
+                    "toMinor": 200000,
+                    "label": "Starting at"
+                  },
+                  "suggestedAmountsMinor": [],
+                  "taxInclusive": false,
+                  "feesPaidBy": "ATTENDEE"
+                },
+                "status": "published",
+                "visibility": "public",
+                "kind": "ticketed",
+                "recurrence": {
+                  "enabled": false,
+                  "exceptions": []
+                },
+                "createdAt": "2026-05-01T21:17:37.673Z",
+                "updatedAt": "2026-05-01T21:24:19.570Z",
+                "__v": 0,
+                "nextOccurrence": "2026-12-20T18:00:00.000Z",
+                "publishedAt": "2026-05-01T21:24:19.570Z",
+                "organizationName": "Addis Events Co",
+                "categoryName": "Music",
+                "occurrences": [
+                  {
+                    "_id": "69f518f2c27668f00b9db266",
+                    "eventId": "69f51871c27668f00b9db24f",
+                    "startAt": "2025-12-20T18:00:00.000Z",
+                    "endAt": "2025-12-20T23:00:00.000Z",
+                    "timezone": "Africa/Addis_Ababa",
+                    "venueSnapshot": {
+                      "name": "Millennium Hall",
+                      "address": "Bole Road",
+                      "city": "Addis Ababa",
+                      "country": "Ethiopia",
+                      "lat": 9.0054,
+                      "lng": 38.7636,
+                      "venueType": "indoor"
+                    },
+                    "featuringArtists": [],
+                    "status": "scheduled",
+                    "capacity": 5000,
+                    "sales": {
+                      "opensAt": "2025-11-01T00:00:00.000Z",
+                      "closesAt": "2025-12-19T23:59:00.000Z"
+                    },
+                    "pricingOverride": {
+                      "enabled": false,
+                      "suggestedAmountsMinor": []
+                    },
+                    "createdAt": "2026-05-01T21:19:46.504Z",
+                    "updatedAt": "2026-05-01T21:19:46.504Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "69f519e4c27668f00b9db29a",
+                    "eventId": "69f51871c27668f00b9db24f",
+                    "startAt": "2026-12-20T18:00:00.000Z",
+                    "endAt": "2026-12-20T23:00:00.000Z",
+                    "timezone": "Africa/Addis_Ababa",
+                    "venueSnapshot": {
+                      "name": "Millennium Hall",
+                      "address": "Bole Road",
+                      "city": "Addis Ababa",
+                      "country": "Ethiopia",
+                      "lat": 9.0054,
+                      "lng": 38.7636,
+                      "venueType": "indoor"
+                    },
+                    "featuringArtists": [],
+                    "status": "scheduled",
+                    "capacity": 5000,
+                    "sales": {
+                      "opensAt": "2025-11-01T00:00:00.000Z",
+                      "closesAt": "2025-12-19T23:59:00.000Z"
+                    },
+                    "pricingOverride": {
+                      "enabled": false,
+                      "suggestedAmountsMinor": []
+                    },
+                    "createdAt": "2026-05-01T21:23:48.476Z",
+                    "updatedAt": "2026-05-01T21:23:48.476Z",
+                    "__v": 0
+                  }
+                ]
+              }
+            }
+          }

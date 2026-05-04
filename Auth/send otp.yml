@@ -1,0 +1,65 @@
+info:
+  name: send otp
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/auth/otp/send"
+  body:
+    type: json
+    data: |-
+      {
+        "phone": "+251942049329",
+        "channel": "sms",
+        "purpose": "login"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/auth/otp/send"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "email": "abebe@example.com",
+            "channel": "email",
+            "purpose": "email_verification"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "59"
+        - name: etag
+          value: W/"3b-U977IG57Un9mC1A8qh4JlPyuLhg"
+        - name: date
+          value: Sat, 02 May 2026 08:09:04 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "OTP sent via email",
+            "data": null
+          }

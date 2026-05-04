@@ -1,0 +1,94 @@
+info:
+  name: create package
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/packages"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Basic Sound Package",
+        "description": "PA system for up to 500 people, 2 microphones, mixer",
+        "price": 1500000,
+        "currency": "ETB",
+        "features": ["PA System", "2 Microphones", "Mixer", "Setup & Teardown"],
+        "sortOrder": 1,
+        "isActive": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/packages"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "name": "Basic Sound Package",
+            "description": "PA system for up to 500 people, 2 microphones, mixer",
+            "price": 1500000,
+            "currency": "ETB",
+            "features": ["PA System", "2 Microphones", "Mixer", "Setup & Teardown"],
+            "sortOrder": 1,
+            "isActive": true
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "492"
+        - name: etag
+          value: W/"1ec-MgxWitdvWQxvgc5WvP8I7Kmk66w"
+        - name: date
+          value: Sat, 02 May 2026 20:15:36 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Package created successfully",
+            "data": {
+              "package": {
+                "owner": "69f5bc8cdca3fe40cfa7b90a",
+                "ownerType": "service_provider",
+                "name": "Basic Sound Package",
+                "description": "PA system for up to 500 people, 2 microphones, mixer",
+                "features": [
+                  "PA System",
+                  "2 Microphones",
+                  "Mixer",
+                  "Setup & Teardown"
+                ],
+                "price": 1500000,
+                "currency": "ETB",
+                "sortOrder": 1,
+                "isActive": true,
+                "_id": "69f65b67dca3fe40cfa7bace",
+                "createdAt": "2026-05-02T20:15:35.893Z",
+                "updatedAt": "2026-05-02T20:15:35.893Z",
+                "__v": 0
+              }
+            }
+          }

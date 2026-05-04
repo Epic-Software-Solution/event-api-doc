@@ -1,0 +1,49 @@
+info:
+  name: delete package
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/packages/69f65b67dca3fe40cfa7bace"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/packages/69f65b67dca3fe40cfa7bace"
+      method: DELETE
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "67"
+        - name: etag
+          value: W/"43-EuoDWsagChABDHfBRT868p0EMNA"
+        - name: date
+          value: Sat, 02 May 2026 20:23:23 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Package deleted successfully",
+            "data": {}
+          }

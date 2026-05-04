@@ -1,0 +1,98 @@
+info:
+  name: initialize payment
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/payment-history/initialize"
+  body:
+    type: json
+    data: |-
+      {
+        "paymentMethodId": "698dd71c9bb2e00077127bde",
+        "amount": 100000,
+        "currency": "ETB",
+        "gateway": "chapa",
+        "eventId": "69f51871c27668f00b9db24f",
+        "occurrenceId": "69f518f2c27668f00b9db266",
+        "ticketTierId": "69f51978c27668f00b9db276",
+        "quantity": 1,
+        "returnUrl": "https://yourapp.com/payment-success"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/payment-history/initialize"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "paymentMethodId": "698dd71c9bb2e00077127bde",
+            "amount": 100000,
+            "currency": "ETB",
+            "gateway": "chapa",
+            "eventId": "69f51871c27668f00b9db24f",
+            "occurrenceId": "69f518f2c27668f00b9db266",
+            "ticketTierId": "69f51978c27668f00b9db276",
+            "quantity": 1,
+            "returnUrl": "https://yourapp.com/payment-success"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "717"
+        - name: etag
+          value: W/"2cd-Nfd43g6w97Gqn6R1mLxFyF7wXEg"
+        - name: date
+          value: Sat, 02 May 2026 20:35:47 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Payment initialized successfully",
+            "data": {
+              "checkoutUrl": "https://checkout.chapa.co/checkout/payment/zXzlkRb1JmHEQTvg5d3mysEsV18jkw64BFJEZBKqgGM21",
+              "paymentHistory": {
+                "paymentType": "ticket",
+                "user": "69f51a89c27668f00b9db2c9",
+                "tickets": [],
+                "paymentMethod": "698dd71c9bb2e00077127bde",
+                "amount": 100000,
+                "currency": "ETB",
+                "transactionId": "9756eead-47ce-4779-a51e-9e2ad4ae6eea",
+                "status": "pending",
+                "returnUrl": "https://yourapp.com/payment-success",
+                "eventId": "69f51871c27668f00b9db24f",
+                "occurrenceId": "69f518f2c27668f00b9db266",
+                "ticketTierId": "69f51978c27668f00b9db276",
+                "quantity": 1,
+                "_id": "69f66022dca3fe40cfa7bb0d",
+                "createdAt": "2026-05-02T20:35:46.595Z",
+                "updatedAt": "2026-05-02T20:35:46.595Z",
+                "__v": 0
+              }
+            }
+          }

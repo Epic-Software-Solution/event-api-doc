@@ -1,0 +1,75 @@
+info:
+  name: public profile
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{baseUrl}}/service-providers/69f5bc8cdca3fe40cfa7b90a"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/service-providers/69f5bc8cdca3fe40cfa7b90a"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "708"
+        - name: etag
+          value: W/"2c4-KzObnMwygKMvj9tdfqMtvcmwhwM"
+        - name: date
+          value: Sat, 02 May 2026 09:49:55 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Service provider retrieved successfully",
+            "data": {
+              "serviceProvider": {
+                "_id": "69f5bc8cdca3fe40cfa7b90a",
+                "authUser": "69f5bc8bdca3fe40cfa7b908",
+                "businessName": "Addis Sound Systems",
+                "slug": "addis-sound-systems",
+                "description": "Professional sound and lighting for events!",
+                "email": "sp@addissound.com",
+                "phone": "+251911000001",
+                "subcategories": [],
+                "services": [],
+                "tags": [],
+                "gallery": [],
+                "serviceAreas": [],
+                "currency": "ETB",
+                "status": "pending",
+                "verificationStatus": "unverified",
+                "instantBooking": false,
+                "minimumNotice": 24,
+                "cancellationPolicy": "moderate",
+                "isFeatured": false,
+                "subscriptionTier": "bethelhem-habtamu",
+                "createdAt": "2026-05-02T08:57:48.004Z",
+                "updatedAt": "2026-05-02T09:48:55.743Z",
+                "__v": 0
+              }
+            }
+          }

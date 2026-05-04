@@ -1,0 +1,90 @@
+info:
+  name: update plan
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/subscription-plans/69f656a4dca3fe40cfa7ba88"
+  body:
+    type: json
+    data: |-
+      {
+        "price": 149900,
+        "isActive": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/subscription-plans/69f656a4dca3fe40cfa7ba88"
+      method: PATCH
+      body:
+        type: json
+        data: |-
+          {
+            "price": 149900,
+            "isActive": true
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "520"
+        - name: etag
+          value: W/"208-SJi6uXkMKW+m5BwNP1YVZvYobfY"
+        - name: date
+          value: Sat, 02 May 2026 19:59:28 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Subscription plan updated successfully",
+            "data": {
+              "plan": {
+                "_id": "69f656a4dca3fe40cfa7ba88",
+                "name": "Professional",
+                "slug": "professional",
+                "description": "For serious event organizers",
+                "features": [
+                  "events",
+                  "tickets",
+                  "analytics",
+                  "channels",
+                  "team"
+                ],
+                "limits": {
+                  "maxEvents": 50,
+                  "maxTeamMembers": 10
+                },
+                "price": 149900,
+                "currency": "ETB",
+                "billingInterval": "monthly",
+                "targetAudience": "organizer",
+                "sortOrder": 1,
+                "isActive": true,
+                "createdAt": "2026-05-02T19:55:16.408Z",
+                "updatedAt": "2026-05-02T19:59:27.950Z",
+                "__v": 0
+              }
+            }
+          }

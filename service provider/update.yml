@@ -1,0 +1,87 @@
+info:
+  name: update
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/service-providers/me  "
+  body:
+    type: json
+    data: |-
+      {
+        "description":"Professional sound and lighting for events!"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/service-providers/me  "
+      method: PATCH
+      body:
+        type: json
+        data: |-
+          {
+            "description":"Professional sound and lighting for events!"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "684"
+        - name: etag
+          value: W/"2ac-eYRnWAe3hI3unc9kQAmUu3GLZv8"
+        - name: date
+          value: Sat, 02 May 2026 09:45:42 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Profile updated successfully",
+            "data": {
+              "serviceProvider": {
+                "_id": "69f5bc8cdca3fe40cfa7b90a",
+                "authUser": "69f5bc8bdca3fe40cfa7b908",
+                "businessName": "Addis Sound Systems",
+                "slug": "addis-sound-systems",
+                "description": "Professional sound and lighting for events!",
+                "email": "sp@addissound.com",
+                "phone": "+251911000001",
+                "subcategories": [],
+                "services": [],
+                "tags": [],
+                "gallery": [],
+                "serviceAreas": [],
+                "currency": "ETB",
+                "status": "pending",
+                "verificationStatus": "unverified",
+                "instantBooking": false,
+                "minimumNotice": 24,
+                "cancellationPolicy": "moderate",
+                "isFeatured": false,
+                "subscriptionTier": "free",
+                "createdAt": "2026-05-02T08:57:48.004Z",
+                "updatedAt": "2026-05-02T08:57:48.004Z",
+                "__v": 0
+              }
+            }
+          }

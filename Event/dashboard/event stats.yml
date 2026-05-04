@@ -1,0 +1,62 @@
+info:
+  name: event stats
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}/dashboard/events/69f51871c27668f00b9db24f/stats"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/dashboard/events/69f51871c27668f00b9db24f/stats"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "333"
+        - name: etag
+          value: W/"14d-mwUyKnvDObbCC5DTo9IcqYbn7to"
+        - name: date
+          value: Sat, 02 May 2026 07:25:47 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Event stats retrieved successfully",
+            "data": {
+              "stats": {
+                "eventId": "69f51871c27668f00b9db24f",
+                "status": "published",
+                "visibility": "public",
+                "occurrenceCount": 2,
+                "occurrenceStatusBreakdown": {
+                  "scheduled": 2
+                },
+                "totalCapacity": 10000,
+                "publishedAt": "2026-05-01T21:24:19.570Z",
+                "nextOccurrence": "2026-12-20T18:00:00.000Z"
+              }
+            }
+          }

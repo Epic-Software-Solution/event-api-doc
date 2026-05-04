@@ -1,0 +1,87 @@
+info:
+  name: subscribe to plan
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/service-providers/me/subscription"
+  body:
+    type: json
+    data: |-
+      {
+        "subscriptionPlanId":"69f348fc64be414c8890f109"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/service-providers/me/subscription"
+      method: PATCH
+      body:
+        type: json
+        data: |-
+          {
+            "subscriptionPlanId":"69f348fc64be414c8890f109"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "702"
+        - name: etag
+          value: W/"2be-1F7SiBNy+E58C0Zu8TSnVfLKz8k"
+        - name: date
+          value: Sat, 02 May 2026 09:48:55 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Subscription updated successfully",
+            "data": {
+              "serviceProvider": {
+                "_id": "69f5bc8cdca3fe40cfa7b90a",
+                "authUser": "69f5bc8bdca3fe40cfa7b908",
+                "businessName": "Addis Sound Systems",
+                "slug": "addis-sound-systems",
+                "description": "Professional sound and lighting for events!",
+                "email": "sp@addissound.com",
+                "phone": "+251911000001",
+                "subcategories": [],
+                "services": [],
+                "tags": [],
+                "gallery": [],
+                "serviceAreas": [],
+                "currency": "ETB",
+                "status": "pending",
+                "verificationStatus": "unverified",
+                "instantBooking": false,
+                "minimumNotice": 24,
+                "cancellationPolicy": "moderate",
+                "isFeatured": false,
+                "subscriptionTier": "bethelhem-habtamu",
+                "createdAt": "2026-05-02T08:57:48.004Z",
+                "updatedAt": "2026-05-02T09:45:42.390Z",
+                "__v": 0
+              }
+            }
+          }

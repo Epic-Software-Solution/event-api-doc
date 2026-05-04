@@ -1,0 +1,128 @@
+info:
+  name: active plans
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{baseUrl}}/subscription-plans/active?targetAudience=service_provider"
+  params:
+    - name: targetAudience
+      value: organizer
+      type: query
+      disabled: true
+    - name: targetAudience
+      value: service_provider
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/subscription-plans/active?targetAudience=service_provider"
+      method: GET
+      params:
+        - name: targetAudience
+          value: organizer
+          type: query
+          disabled: true
+        - name: targetAudience
+          value: service_provider
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "1230"
+        - name: etag
+          value: W/"4ce-rZX5FSYBnc4nWq1nKNRuN+LK4JA"
+        - name: date
+          value: Sat, 02 May 2026 19:57:33 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Active subscription plans retrieved successfully",
+            "data": {
+              "plans": [
+                {
+                  "_id": "69f348fc64be414c8890f109",
+                  "name": "Bethelhem Habtamu",
+                  "slug": "bethelhem-habtamu",
+                  "features": [
+                    "analytics",
+                    "priority_support",
+                    "custom_domain",
+                    "advanced_analytics"
+                  ],
+                  "price": 1000,
+                  "currency": "USD",
+                  "billingInterval": "monthly",
+                  "targetAudience": "service_provider",
+                  "sortOrder": 0,
+                  "isActive": true,
+                  "createdAt": "2026-04-30T12:20:12.710Z",
+                  "updatedAt": "2026-04-30T12:20:12.710Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69e5e2992218cc1476a3ff67",
+                  "name": "LeProvider plan",
+                  "slug": "leprovider-plan",
+                  "features": [
+                    "priority_support",
+                    "custom_domain",
+                    "advanced_analytics",
+                    "white_label"
+                  ],
+                  "price": 122,
+                  "currency": "USD",
+                  "billingInterval": "monthly",
+                  "targetAudience": "service_provider",
+                  "sortOrder": 0,
+                  "isActive": true,
+                  "createdAt": "2026-04-20T08:23:53.551Z",
+                  "updatedAt": "2026-04-20T08:23:53.551Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69ef65892da06b316e22e27a",
+                  "name": "Service Provider",
+                  "slug": "service-provider",
+                  "features": [
+                    "analytics",
+                    "priority_support",
+                    "custom_domain",
+                    "advanced_analytics"
+                  ],
+                  "price": 100,
+                  "currency": "USD",
+                  "billingInterval": "monthly",
+                  "targetAudience": "service_provider",
+                  "sortOrder": 0,
+                  "isActive": true,
+                  "createdAt": "2026-04-27T13:32:57.302Z",
+                  "updatedAt": "2026-04-27T13:32:57.302Z",
+                  "__v": 0
+                }
+              ]
+            }
+          }

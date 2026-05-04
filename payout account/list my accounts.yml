@@ -1,0 +1,66 @@
+info:
+  name: list my accounts
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}/payout-accounts"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/payout-accounts"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "433"
+        - name: etag
+          value: W/"1b1-pcZnFeb2iGjgXOkVhb/B9kJgS3Q"
+        - name: date
+          value: Sat, 02 May 2026 07:58:50 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Payout accounts retrieved successfully",
+            "data": {
+              "accounts": [
+                {
+                  "_id": "69f5ae59dceb3cf23324120d",
+                  "ownerId": "69f51277c27668f00b9db20b",
+                  "ownerType": "organizer",
+                  "accountType": "bank",
+                  "accountName": "Addis Events Co",
+                  "accountNumber": "1000123456789",
+                  "bankName": "Commercial Bank of Ethiopia",
+                  "isVerified": false,
+                  "isPrimary": true,
+                  "createdAt": "2026-05-02T07:57:13.130Z",
+                  "updatedAt": "2026-05-02T07:57:13.130Z",
+                  "__v": 0
+                }
+              ]
+            }
+          }

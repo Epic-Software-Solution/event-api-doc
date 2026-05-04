@@ -1,0 +1,8 @@
+name: local
+variables:
+  - name: baseUrl
+    value: http://localhost:8001/api/v1
+  - name: accessToken
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjlmNTFhODhjMjc2NjhmMDBiOWRiMmM3IiwidHlwZSI6InVzZXIiLCJpYXQiOjE3Nzc4MDAxMTQsImV4cCI6MTc3NzgwMTAxNH0.ea9tEiOFYAHrGyAMKjM8L2x9eKe9LWUrcJCmbmn9jec
+  - name: superAdminToken
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdXBlcl9hZG1pbiI6IjY5ZjUxMGJiNWYxZjZhNDE3OTFmYjU2NCIsInR5cGUiOiJzdXBlcl9hZG1pbiIsImlhdCI6MTc3Nzc1MTY3NiwiZXhwIjoxNzc3NzUyNTc2fQ.8eHFoTO-milYDq6wcGHbCSp9WBUajMlG3X14Eqkm-DI

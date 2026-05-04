@@ -1,0 +1,21 @@
+info:
+  name: subscribe to plan
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/organizers/me/subscription"
+  body:
+    type: json
+    data: |-
+      {
+        "subscriptionPlanId":"69f51796c27668f00b9db22a"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

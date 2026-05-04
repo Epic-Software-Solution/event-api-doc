@@ -1,0 +1,196 @@
+info:
+  name: category list
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}/categories"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/categories"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "2800"
+        - name: etag
+          value: W/"af0-dhgWGCUAKGn5zfXBIS59m5UBsoo"
+        - name: date
+          value: Sat, 02 May 2026 08:44:14 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Categories retrieved successfully",
+            "data": {
+              "categories": [
+                {
+                  "_id": "69e8cae9cc91a696d383aedf",
+                  "name": "Art",
+                  "slug": "art",
+                  "description": "art",
+                  "order": 0,
+                  "isActive": true,
+                  "eventCount": 0,
+                  "createdAt": "2026-04-22T13:19:37.296Z",
+                  "updatedAt": "2026-04-22T13:19:37.296Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69f5b11164be414c8890ffde",
+                  "name": "Betish",
+                  "slug": "betish",
+                  "description": "bet",
+                  "order": 0,
+                  "isActive": true,
+                  "eventCount": 0,
+                  "createdAt": "2026-05-02T08:08:49.524Z",
+                  "updatedAt": "2026-05-02T08:08:49.524Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69e8cad3cc91a696d383aecb",
+                  "name": "Technology",
+                  "slug": "technology",
+                  "description": "tech",
+                  "order": 0,
+                  "isActive": true,
+                  "eventCount": 0,
+                  "createdAt": "2026-04-22T13:19:15.045Z",
+                  "updatedAt": "2026-04-22T13:19:15.045Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69b7fa8cecff8fe019dc96f5",
+                  "name": "Test category",
+                  "slug": "test-category",
+                  "description": "testtt",
+                  "order": 0,
+                  "isActive": true,
+                  "eventCount": 0,
+                  "createdAt": "2026-03-16T12:41:48.527Z",
+                  "updatedAt": "2026-04-20T08:20:34.961Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69b11f70f162a039917ea301",
+                  "name": "Ye fre and betti concert",
+                  "slug": "ye-fre-and-betti-concert",
+                  "description": "setinet",
+                  "order": 0,
+                  "isActive": true,
+                  "eventCount": 0,
+                  "createdAt": "2026-03-11T07:53:20.626Z",
+                  "updatedAt": "2026-03-11T07:53:20.626Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69b2b5e7239bc1a562617f18",
+                  "name": "absra",
+                  "slug": "yabsra",
+                  "description": "test",
+                  "order": 0,
+                  "isActive": true,
+                  "eventCount": 0,
+                  "createdAt": "2026-03-12T12:47:35.493Z",
+                  "updatedAt": "2026-04-27T11:20:36.853Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69e8cafecc91a696d383aeeb",
+                  "name": "food",
+                  "slug": "food",
+                  "description": "food",
+                  "order": 0,
+                  "isActive": true,
+                  "eventCount": 0,
+                  "createdAt": "2026-04-22T13:19:58.374Z",
+                  "updatedAt": "2026-04-22T13:19:58.374Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69e8ca2bcc91a696d383aeaf",
+                  "name": "music",
+                  "slug": "music",
+                  "description": "music,concert,rnb,jazz",
+                  "order": 0,
+                  "isActive": true,
+                  "eventCount": 0,
+                  "createdAt": "2026-04-22T13:16:27.998Z",
+                  "updatedAt": "2026-04-22T13:16:27.998Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69e8cb1bcc91a696d383aef5",
+                  "name": "sport",
+                  "slug": "sport",
+                  "description": "sport",
+                  "order": 0,
+                  "isActive": true,
+                  "eventCount": 0,
+                  "createdAt": "2026-04-22T13:20:27.147Z",
+                  "updatedAt": "2026-04-22T13:25:22.222Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69b2a71b239bc1a562617e7f",
+                  "name": "testing the api",
+                  "slug": "testing-the-api",
+                  "description": "test",
+                  "order": 0,
+                  "isActive": true,
+                  "eventCount": 0,
+                  "createdAt": "2026-03-12T11:44:27.624Z",
+                  "updatedAt": "2026-03-12T11:44:27.624Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69f5113c5f1f6a41791fb5a1",
+                  "name": "Music",
+                  "slug": "music",
+                  "description": "Music events and concerts",
+                  "icon": "music-note",
+                  "order": 1,
+                  "isActive": true,
+                  "createdAt": "2026-05-01T20:46:52.664Z",
+                  "updatedAt": "2026-05-01T20:46:52.664Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69f5b8ebdca3fe40cfa7b8cd",
+                  "name": "Sports",
+                  "slug": "sports",
+                  "description": "Sports events and competitions",
+                  "icon": "sports",
+                  "order": 2,
+                  "isActive": true,
+                  "createdAt": "2026-05-02T08:42:19.588Z",
+                  "updatedAt": "2026-05-02T08:42:19.588Z",
+                  "__v": 0
+                }
+              ]
+            }
+          }

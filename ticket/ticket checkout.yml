@@ -1,0 +1,101 @@
+info:
+  name: ticket checkout
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/tickets/checkout"
+  body:
+    type: json
+    data: |-
+      {
+        "eventId": "69f51871c27668f00b9db24f",
+        "occurrenceId": "69f518f2c27668f00b9db266",
+        "ticketTierId": "69f51978c27668f00b9db276",
+        "quantity": 2,
+        "paymentMethodId": "698dd71c9bb2e00077127bde",
+        "currency": "ETB"
+      //     "guest": {
+      //     "phone": "+251919234567"
+      //   }
+      //    "guest": {
+      //     "email": "guest@example.com",
+      //     "firstName": "Guest",
+      //     "lastName": "User",
+      //     "password": "Guest1234!"
+      //   }
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/tickets/checkout"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "eventId": "69f51871c27668f00b9db24f",
+            "occurrenceId": "69f518f2c27668f00b9db266",
+            "ticketTierId": "69f51978c27668f00b9db276",
+            "quantity": 2,
+            "paymentMethodId": "698dd71c9bb2e00077127bde",
+            "currency": "ETB"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "735"
+        - name: etag
+          value: W/"2df-xS//T8k53vzBJdnNTftvW0yZu0A"
+        - name: date
+          value: Sat, 02 May 2026 13:17:41 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Checkout initialized",
+            "data": {
+              "checkoutUrl": "https://checkout.chapa.co/checkout/payment/HfAAlosO4ORqAHUTdgipenjObZ805j44lyczKJnADARRp",
+              "paymentHistory": {
+                "paymentType": "ticket",
+                "user": "69f51a89c27668f00b9db2c9",
+                "tickets": [],
+                "paymentMethod": "698dd71c9bb2e00077127bde",
+                "amount": 1000,
+                "currency": "ETB",
+                "transactionId": "ea60a6ed-0d19-4e51-851e-6ff92ccc9d69",
+                "status": "pending",
+                "eventId": "69f51871c27668f00b9db24f",
+                "occurrenceId": "69f518f2c27668f00b9db266",
+                "ticketTierId": "69f51978c27668f00b9db276",
+                "quantity": 2,
+                "entranceTime": "2026-12-20T18:00:00.000Z",
+                "expireDate": "2026-12-20T23:00:00.000Z",
+                "_id": "69f5f974dca3fe40cfa7b9d3",
+                "createdAt": "2026-05-02T13:17:40.691Z",
+                "updatedAt": "2026-05-02T13:17:40.691Z",
+                "__v": 0
+              }
+            }
+          }

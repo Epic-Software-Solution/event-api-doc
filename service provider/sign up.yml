@@ -1,0 +1,78 @@
+info:
+  name: sign up
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/auth/service-provider/signup"
+  body:
+    type: json
+    data: |-
+      {
+        "businessName": "Addis Sound Systems",
+        "email": "sp@addissound.com",
+        "password": "SProvider1234!",
+        "phone": "+251911000001",
+        "description": "Professional sound and lighting for events",
+        "currency": "ETB"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/auth/service-provider/signup"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "businessName": "Addis Sound Systems",
+            "email": "sp@addissound.com",
+            "password": "SProvider1234!",
+            "phone": "+251911000001",
+            "description": "Professional sound and lighting for events",
+            "currency": "ETB"
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: authorization
+          value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXJ2aWNlX3Byb3ZpZGVyIjoiNjlmNWJjOGJkY2EzZmU0MGNmYTdiOTA4IiwidHlwZSI6InNlcnZpY2VfcHJvdmlkZXIiLCJpYXQiOjE3Nzc3MTIyNjgsImV4cCI6MTc3NzcxMzE2OH0.aecjDrLXWY-DCMD_DzYY8IXpdGEmmghK4wd2k5pKdTE
+        - name: refreshtoken
+          value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXJ2aWNlX3Byb3ZpZGVyIjoiNjlmNWJjOGJkY2EzZmU0MGNmYTdiOTA4IiwidHlwZSI6InNlcnZpY2VfcHJvdmlkZXIiLCJpc1JlZnJlc2giOnRydWUsImlhdCI6MTc3NzcxMjI2OCwiZXhwIjoxNzc4MzE3MDY4fQ.Kj1QhmhDcZ9ph3YDsBezUoINWY__JtxcTJoXXgNIB8I
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "584"
+        - name: etag
+          value: W/"248-AYkcpg+qhfZ2bfkASKC6H3PVf1g"
+        - name: date
+          value: Sat, 02 May 2026 08:57:48 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Service provider registered successfully",
+            "data": {
+              "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXJ2aWNlX3Byb3ZpZGVyIjoiNjlmNWJjOGJkY2EzZmU0MGNmYTdiOTA4IiwidHlwZSI6InNlcnZpY2VfcHJvdmlkZXIiLCJpYXQiOjE3Nzc3MTIyNjgsImV4cCI6MTc3NzcxMzE2OH0.aecjDrLXWY-DCMD_DzYY8IXpdGEmmghK4wd2k5pKdTE",
+              "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXJ2aWNlX3Byb3ZpZGVyIjoiNjlmNWJjOGJkY2EzZmU0MGNmYTdiOTA4IiwidHlwZSI6InNlcnZpY2VfcHJvdmlkZXIiLCJpc1JlZnJlc2giOnRydWUsImlhdCI6MTc3NzcxMjI2OCwiZXhwIjoxNzc4MzE3MDY4fQ.Kj1QhmhDcZ9ph3YDsBezUoINWY__JtxcTJoXXgNIB8I"
+            }
+          }

@@ -1,0 +1,46 @@
+info:
+  name: create Event
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{baseUrl}}/dashboard/events"
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Addis Music Festival 2025",
+        "description": "The biggest music festival in Addis Ababa featuring top local and international artists.",
+        "shortDescription": "Addis's premier annual music festival",
+        "timezone": "Africa/Addis_Ababa",
+        "categoryId": "69f5113c5f1f6a41791fb5a1",
+        "tags": ["music", "festival", "live"],
+        "kind": "ticketed",
+        "visibility": "public",
+        "media": {
+          "image": "https://example.com/festival-cover.jpg",
+          "gallery": []
+        },
+        "pricing": {
+          "mode": "paid",
+          "currency": "ETB",
+          "display": {
+            "fromMinor": 50000,
+            "toMinor": 200000,
+            "label": "Starting at"
+          },
+          "taxInclusive": false,
+          "feesPaidBy": "ATTENDEE"
+        },
+        "recurrence": {
+          "enabled": false
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

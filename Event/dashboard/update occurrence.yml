@@ -1,0 +1,24 @@
+info:
+  name: update occurrence
+  type: http
+  seq: 8
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/dashboard/events/69f51871c27668f00b9db24f/occurrences/69f518f2c27668f00b9db266"
+  body:
+    type: json
+    data: |-
+      {
+        "sales": {
+          "opensAt": "2026-01-01T00:00:00.000Z",
+          "closesAt": "2026-12-19T23:59:00.000Z"
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

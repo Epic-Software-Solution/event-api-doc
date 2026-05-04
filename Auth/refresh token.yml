@@ -1,0 +1,68 @@
+info:
+  name: refresh token
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/auth/refresh-token"
+  body:
+    type: json
+    data: |-
+      {
+        "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmdhbml6ZXIiOiI2OWY1MTI3N2MyNzY2OGYwMGI5ZGIyMDkiLCJ0eXBlIjoib3JnYW5pemVyIiwiaXNSZWZyZXNoIjp0cnVlLCJpYXQiOjE3Nzc3MDg2MTEsImV4cCI6MTc3ODMxMzQxMX0.4vur3cuI4_4WQ-ITZcJzfT1VnhOd9AmlGQyX4uEf9V4"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/auth/refresh-token"
+      method: PATCH
+      body:
+        type: json
+        data: |-
+          {
+            "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmdhbml6ZXIiOiI2OWY1MTI3N2MyNzY2OGYwMGI5ZGIyMDkiLCJ0eXBlIjoib3JnYW5pemVyIiwiaXNSZWZyZXNoIjp0cnVlLCJpYXQiOjE3Nzc3MDg2MTEsImV4cCI6MTc3ODMxMzQxMX0.4vur3cuI4_4WQ-ITZcJzfT1VnhOd9AmlGQyX4uEf9V4"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: authorization
+          value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmRlZmluZWQiOiI2OWY1MTI3N2MyNzY2OGYwMGI5ZGIyMDkiLCJpYXQiOjE3Nzc3MDk2NDEsImV4cCI6MTc3NzcxMDU0MX0.tnGj1J61jQHT5pKWB8OJgGmm2P2qHy3nBGjsKrdQt_g
+        - name: refreshtoken
+          value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmRlZmluZWQiOiI2OWY1MTI3N2MyNzY2OGYwMGI5ZGIyMDkiLCJpc1JlZnJlc2giOnRydWUsImlhdCI6MTc3NzcwOTY0MSwiZXhwIjoxNzc4MzE0NDQxfQ.PEn4fs90B3Gb3GD6WhcB1ptnfhQ45A2yux3ZrhgutHo
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "484"
+        - name: etag
+          value: W/"1e4-DprAsiRaHFrjlWjRkPOjKCGYlNE"
+        - name: date
+          value: Sat, 02 May 2026 08:14:02 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Token refreshed successfully",
+            "data": {
+              "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmRlZmluZWQiOiI2OWY1MTI3N2MyNzY2OGYwMGI5ZGIyMDkiLCJpYXQiOjE3Nzc3MDk2NDEsImV4cCI6MTc3NzcxMDU0MX0.tnGj1J61jQHT5pKWB8OJgGmm2P2qHy3nBGjsKrdQt_g",
+              "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmRlZmluZWQiOiI2OWY1MTI3N2MyNzY2OGYwMGI5ZGIyMDkiLCJpc1JlZnJlc2giOnRydWUsImlhdCI6MTc3NzcwOTY0MSwiZXhwIjoxNzc4MzE0NDQxfQ.PEn4fs90B3Gb3GD6WhcB1ptnfhQ45A2yux3ZrhgutHo"
+            }
+          }

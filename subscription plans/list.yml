@@ -1,0 +1,254 @@
+info:
+  name: list
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}/subscription-plans?page=1&limit=20"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: limit
+      value: "20"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/subscription-plans?page=1&limit=20"
+      method: GET
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: limit
+          value: "20"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "3467"
+        - name: etag
+          value: W/"d8b-4tcJrtB0k9KlL+cQq5r8OxloV7Y"
+        - name: date
+          value: Sat, 02 May 2026 19:55:51 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Subscription plans retrieved successfully",
+            "data": {
+              "plans": [
+                {
+                  "_id": "69f348fc64be414c8890f109",
+                  "name": "Bethelhem Habtamu",
+                  "slug": "bethelhem-habtamu",
+                  "features": [
+                    "analytics",
+                    "priority_support",
+                    "custom_domain",
+                    "advanced_analytics"
+                  ],
+                  "price": 1000,
+                  "currency": "USD",
+                  "billingInterval": "monthly",
+                  "targetAudience": "service_provider",
+                  "sortOrder": 0,
+                  "isActive": true,
+                  "createdAt": "2026-04-30T12:20:12.710Z",
+                  "updatedAt": "2026-04-30T12:20:12.710Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69f51796c27668f00b9db22a",
+                  "name": "Free",
+                  "slug": "free",
+                  "description": "Free plan for organizers",
+                  "features": [
+                    "events",
+                    "tickets",
+                    "analytics"
+                  ],
+                  "price": 0,
+                  "currency": "ETB",
+                  "billingInterval": "monthly",
+                  "targetAudience": "organizer",
+                  "sortOrder": 0,
+                  "isActive": true,
+                  "createdAt": "2026-05-01T21:13:58.599Z",
+                  "updatedAt": "2026-05-01T21:13:58.599Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69e5e2992218cc1476a3ff67",
+                  "name": "LeProvider plan",
+                  "slug": "leprovider-plan",
+                  "features": [
+                    "priority_support",
+                    "custom_domain",
+                    "advanced_analytics",
+                    "white_label"
+                  ],
+                  "price": 122,
+                  "currency": "USD",
+                  "billingInterval": "monthly",
+                  "targetAudience": "service_provider",
+                  "sortOrder": 0,
+                  "isActive": true,
+                  "createdAt": "2026-04-20T08:23:53.551Z",
+                  "updatedAt": "2026-04-20T08:23:53.551Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69ef65892da06b316e22e27a",
+                  "name": "Service Provider",
+                  "slug": "service-provider",
+                  "features": [
+                    "analytics",
+                    "priority_support",
+                    "custom_domain",
+                    "advanced_analytics"
+                  ],
+                  "price": 100,
+                  "currency": "USD",
+                  "billingInterval": "monthly",
+                  "targetAudience": "service_provider",
+                  "sortOrder": 0,
+                  "isActive": true,
+                  "createdAt": "2026-04-27T13:32:57.302Z",
+                  "updatedAt": "2026-04-27T13:32:57.302Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69b3d63bff490428402d0479",
+                  "name": "Starter",
+                  "slug": "starter",
+                  "description": "For small organizers – post events and use channels.",
+                  "features": [
+                    "events",
+                    "channels"
+                  ],
+                  "price": 29,
+                  "currency": "ETB",
+                  "billingInterval": "monthly",
+                  "targetAudience": "organizer",
+                  "sortOrder": 0,
+                  "isActive": true,
+                  "createdAt": "2026-03-13T09:17:47.823Z",
+                  "updatedAt": "2026-03-13T09:17:47.823Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69ef4792ee5d883a737bded7",
+                  "name": "Z plan",
+                  "slug": "z-plan",
+                  "features": [
+                    "analytics",
+                    "custom_branding",
+                    "priority_support"
+                  ],
+                  "price": 134,
+                  "currency": "USD",
+                  "billingInterval": "monthly",
+                  "targetAudience": "organizer",
+                  "sortOrder": 0,
+                  "isActive": true,
+                  "createdAt": "2026-04-27T11:25:06.600Z",
+                  "updatedAt": "2026-04-27T11:25:45.522Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69b2bc34239bc1a562617fc4",
+                  "name": "test",
+                  "slug": "test",
+                  "features": [
+                    "analytics",
+                    "advanced_analytics"
+                  ],
+                  "price": 1000,
+                  "currency": "USD",
+                  "billingInterval": "monthly",
+                  "targetAudience": "organizer",
+                  "sortOrder": 0,
+                  "isActive": true,
+                  "createdAt": "2026-03-12T13:14:28.484Z",
+                  "updatedAt": "2026-03-12T13:14:28.484Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69b2b775239bc1a562617f4d",
+                  "name": "testing the api",
+                  "slug": "testing-the-api",
+                  "features": [
+                    "analytics",
+                    "custom_branding",
+                    "priority_support",
+                    "api_access",
+                    "custom_domain",
+                    "advanced_analytics",
+                    "white_label"
+                  ],
+                  "price": 100,
+                  "currency": "USD",
+                  "billingInterval": "monthly",
+                  "targetAudience": "organizer",
+                  "sortOrder": 0,
+                  "isActive": true,
+                  "createdAt": "2026-03-12T12:54:13.655Z",
+                  "updatedAt": "2026-03-12T12:54:13.655Z",
+                  "__v": 0
+                },
+                {
+                  "_id": "69f656a4dca3fe40cfa7ba88",
+                  "name": "Professional",
+                  "slug": "professional",
+                  "description": "For serious event organizers",
+                  "features": [
+                    "events",
+                    "tickets",
+                    "analytics",
+                    "channels",
+                    "team"
+                  ],
+                  "limits": {
+                    "maxEvents": 50,
+                    "maxTeamMembers": 10
+                  },
+                  "price": 99900,
+                  "currency": "ETB",
+                  "billingInterval": "monthly",
+                  "targetAudience": "organizer",
+                  "sortOrder": 1,
+                  "isActive": true,
+                  "createdAt": "2026-05-02T19:55:16.408Z",
+                  "updatedAt": "2026-05-02T19:55:16.408Z",
+                  "__v": 0
+                }
+              ],
+              "total": 9,
+              "page": 1,
+              "limit": 20
+            }
+          }

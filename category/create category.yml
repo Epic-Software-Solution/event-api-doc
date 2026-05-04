@@ -1,0 +1,80 @@
+info:
+  name: create category
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/categories"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Sports",
+        "description": "Sports events and competitions",
+        "icon": "sports",
+        "order": 2
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/categories"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "name": "Sports",
+            "description": "Sports events and competitions",
+            "icon": "sports",
+            "order": 2
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "320"
+        - name: etag
+          value: W/"140-wVxoYJuaSZCZl9jBQp4QRzaD4ek"
+        - name: date
+          value: Sat, 02 May 2026 08:42:19 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Category created successfully",
+            "data": {
+              "category": {
+                "name": "Sports",
+                "slug": "sports",
+                "description": "Sports events and competitions",
+                "icon": "sports",
+                "order": 2,
+                "isActive": true,
+                "_id": "69f5b8ebdca3fe40cfa7b8cd",
+                "createdAt": "2026-05-02T08:42:19.588Z",
+                "updatedAt": "2026-05-02T08:42:19.588Z",
+                "__v": 0
+              }
+            }
+          }

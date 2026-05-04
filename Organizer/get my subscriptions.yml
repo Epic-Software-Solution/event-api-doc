@@ -1,0 +1,81 @@
+info:
+  name: get my subscriptions
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{baseUrl}}/organizers/me/subscription"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/organizers/me/subscription"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "718"
+        - name: etag
+          value: W/"2ce-ZhHM3xLWPMiq17w9zAz7hU9WTCk"
+        - name: date
+          value: Sat, 02 May 2026 20:05:37 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Subscription retrieved successfully",
+            "data": {
+              "subscription": {
+                "_id": "69f51869c27668f00b9db243",
+                "ownerId": "69f51277c27668f00b9db20b",
+                "ownerType": "organizer",
+                "planId": "69f51796c27668f00b9db22a",
+                "status": "active",
+                "startedAt": "2026-05-01T21:17:29.226Z",
+                "createdAt": "2026-05-01T21:17:29.231Z",
+                "updatedAt": "2026-05-01T21:17:29.231Z",
+                "__v": 0
+              },
+              "plan": {
+                "_id": "69f51796c27668f00b9db22a",
+                "name": "Free",
+                "slug": "free",
+                "description": "Free plan for organizers",
+                "features": [
+                  "events",
+                  "tickets",
+                  "analytics"
+                ],
+                "price": 0,
+                "currency": "ETB",
+                "billingInterval": "monthly",
+                "targetAudience": "organizer",
+                "sortOrder": 0,
+                "isActive": true,
+                "createdAt": "2026-05-01T21:13:58.599Z",
+                "updatedAt": "2026-05-01T21:13:58.599Z",
+                "__v": 0
+              }
+            }
+          }

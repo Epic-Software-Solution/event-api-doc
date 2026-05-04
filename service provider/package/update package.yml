@@ -1,0 +1,84 @@
+info:
+  name: update package
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/packages/69f65b67dca3fe40cfa7bace"
+  body:
+    type: json
+    data: |-
+      {
+        "price": 1800000,
+        "description": "Updated: PA system for up to 1000 people"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/packages/69f65b67dca3fe40cfa7bace"
+      method: PATCH
+      body:
+        type: json
+        data: |-
+          {
+            "price": 1800000,
+            "description": "Updated: PA system for up to 1000 people"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "480"
+        - name: etag
+          value: W/"1e0-pXv2g1rhkQgkEhXx0b1W7ja7XGA"
+        - name: date
+          value: Sat, 02 May 2026 20:22:33 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Package updated successfully",
+            "data": {
+              "package": {
+                "_id": "69f65b67dca3fe40cfa7bace",
+                "owner": "69f5bc8cdca3fe40cfa7b90a",
+                "ownerType": "service_provider",
+                "name": "Basic Sound Package",
+                "description": "Updated: PA system for up to 1000 people",
+                "features": [
+                  "PA System",
+                  "2 Microphones",
+                  "Mixer",
+                  "Setup & Teardown"
+                ],
+                "price": 1800000,
+                "currency": "ETB",
+                "sortOrder": 1,
+                "isActive": true,
+                "createdAt": "2026-05-02T20:15:35.893Z",
+                "updatedAt": "2026-05-02T20:22:33.104Z",
+                "__v": 0
+              }
+            }
+          }

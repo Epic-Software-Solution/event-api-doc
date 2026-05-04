@@ -1,0 +1,109 @@
+info:
+  name: fetch ticket
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{baseUrl}}/tickets/69f5fa7f64be414c889106d6"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/tickets/69f5fa7f64be414c889106d6"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "1408"
+        - name: etag
+          value: W/"580-I5eHzLZH120j/c2KRy4v/dU2t/8"
+        - name: date
+          value: Sat, 02 May 2026 15:17:18 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Ticket retrieved successfully",
+            "data": {
+              "ticket": {
+                "_id": "69f5fa7f64be414c889106d6",
+                "event": {
+                  "_id": "69f51871c27668f00b9db24f",
+                  "title": "Addis Music Festival 2025",
+                  "slug": "addis-music-festival-2025",
+                  "media": {
+                    "image": "https://example.com/festival-cover.jpg",
+                    "gallery": []
+                  }
+                },
+                "occurrence": {
+                  "sales": {
+                    "opensAt": "2026-01-01T00:00:00.000Z",
+                    "closesAt": "2026-12-19T23:59:00.000Z"
+                  },
+                  "_id": "69f518f2c27668f00b9db266",
+                  "eventId": "69f51871c27668f00b9db24f",
+                  "startAt": "2026-12-20T18:00:00.000Z",
+                  "endAt": "2026-12-20T23:00:00.000Z",
+                  "timezone": "Africa/Addis_Ababa",
+                  "venueSnapshot": {
+                    "name": "Millennium Hall",
+                    "address": "Bole Road",
+                    "city": "Addis Ababa",
+                    "country": "Ethiopia",
+                    "lat": 9.0054,
+                    "lng": 38.7636,
+                    "venueType": "indoor"
+                  },
+                  "featuringArtists": [],
+                  "status": "scheduled",
+                  "capacity": 0,
+                  "pricingOverride": {
+                    "enabled": false,
+                    "suggestedAmountsMinor": []
+                  },
+                  "createdAt": "2026-05-01T21:19:46.504Z",
+                  "updatedAt": "2026-05-02T13:16:57.732Z",
+                  "__v": 0
+                },
+                "ticketTier": {
+                  "_id": "69f51978c27668f00b9db276",
+                  "name": "General Admission",
+                  "slug": "general-admission",
+                  "currency": "ETB",
+                  "priceMinor": 50000
+                },
+                "paymentHistory": "69f5fa3edca3fe40cfa7b9ed",
+                "user": "69f51a89c27668f00b9db2c9",
+                "purchaseDate": "2026-05-02T13:22:07.497Z",
+                "transactionId": "APe5uHaUGIsdW-1",
+                "entranceTime": "2026-12-20T18:00:00.000Z",
+                "expireDate": "2026-12-20T23:00:00.000Z",
+                "status": "valid",
+                "createdAt": "2026-05-02T13:22:07.497Z",
+                "updatedAt": "2026-05-02T13:22:07.497Z",
+                "__v": 0
+              }
+            }
+          }
