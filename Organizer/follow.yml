@@ -4,7 +4,7 @@ info:
   seq: 11
 
 http:
-  method: GET
+  method: POST
   url: "{{baseUrl}}/organizers/69f8508dc9cf331b865970fe/follow"
   auth: inherit
 

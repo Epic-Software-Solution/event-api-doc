@@ -5,7 +5,13 @@ info:
 
 http:
   method: PATCH
-  url: "{{baseUrl}}/users/me"
+  url: "{{baseUrl}}/user/me"
+  body:
+    type: json
+    data: |-
+      {
+        "avatar": "https://example.com/my-photo.jpg"
+      }
   auth: inherit
 
 settings:
