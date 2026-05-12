@@ -1,0 +1,53 @@
+info:
+  name: booking overview
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/dashboard/analytics/service-provider/bookings"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/dashboard/analytics/service-provider/bookings"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "136"
+        - name: etag
+          value: W/"88-TSddJ2czPnBDGgRTAO7uSWfyWDg"
+        - name: date
+          value: Tue, 12 May 2026 11:10:00 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Booking stats retrieved successfully",
+            "data": {
+              "totalBookings": 0,
+              "completedBookings": 0,
+              "cancelledBookings": 0
+            }
+          }

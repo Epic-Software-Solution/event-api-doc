@@ -1,0 +1,51 @@
+info:
+  name: users overview
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}/dashboard/analytics/overview/users "
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/dashboard/analytics/overview/users "
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "82"
+        - name: etag
+          value: W/"52-qM2TmLXGqtH/g6nEIQVc3a1TTc0"
+        - name: date
+          value: Tue, 12 May 2026 09:20:30 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "User stats retrieved successfully",
+            "data": {
+              "total": 22
+            }
+          }
