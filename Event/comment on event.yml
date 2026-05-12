@@ -10,8 +10,8 @@ http:
     type: json
     data: |-
       { 
-        "text": "I dont think it is a good idea",
-       "parentId": "6a023f2da3f53eb35bf0efec" 
+        "text": "What happened?",
+      "parentId":"6a02ebc93ea73be56bb97a2d"
       }
   auth: inherit
 
