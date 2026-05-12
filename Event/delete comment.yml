@@ -1,0 +1,49 @@
+info:
+  name: delete comment
+  type: http
+  seq: 8
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/events/comments/6a023f8aa3f53eb35bf0eff8"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/events/comments/6a023f8aa3f53eb35bf0eff8"
+      method: DELETE
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "69"
+        - name: etag
+          value: W/"45-WWSNKX31bI+kly6L4HhzJbhp6o4"
+        - name: date
+          value: Mon, 11 May 2026 20:57:04 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Comment deleted successfully",
+            "data": null
+          }

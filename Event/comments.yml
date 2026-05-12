@@ -1,0 +1,133 @@
+info:
+  name: comments
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{baseUrl}}/events/69f51871c27668f00b9db24f/comments?page=1&limit=20"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: limit
+      value: "20"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/events/69f51871c27668f00b9db24f/comments?page=1&limit=20"
+      method: GET
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: limit
+          value: "20"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "1810"
+        - name: etag
+          value: W/"712-5zy0Bxz6Cj9V8CGPf0CGqrek1sE"
+        - name: date
+          value: Mon, 11 May 2026 20:46:01 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Comments retrieved successfully",
+            "data": {
+              "items": [
+                {
+                  "_id": "6a023f2da3f53eb35bf0efec",
+                  "eventId": "69f51871c27668f00b9db24f",
+                  "userId": {
+                    "_id": "69f51a89c27668f00b9db2c9",
+                    "firstName": "Abebe",
+                    "lastName": "Kebede",
+                    "avatar": "https://ethiolotteryimages.s3.us-east-1.amazonaws.com/uploads/87c20684-cefb-4636-81a5-e2bc1f6f2fb1.jpg"
+                  },
+                  "text": "Can't wait for this event!",
+                  "parentId": null,
+                  "createdAt": "2026-05-11T20:42:21.007Z",
+                  "updatedAt": "2026-05-11T20:42:21.007Z",
+                  "__v": 0,
+                  "replies": [
+                    {
+                      "_id": "6a023f8aa3f53eb35bf0eff8",
+                      "eventId": "69f51871c27668f00b9db24f",
+                      "userId": {
+                        "_id": "69f51a89c27668f00b9db2c9",
+                        "firstName": "Abebe",
+                        "lastName": "Kebede",
+                        "avatar": "https://ethiolotteryimages.s3.us-east-1.amazonaws.com/uploads/87c20684-cefb-4636-81a5-e2bc1f6f2fb1.jpg"
+                      },
+                      "text": "Same here!",
+                      "parentId": "6a023f2da3f53eb35bf0efec",
+                      "createdAt": "2026-05-11T20:43:54.343Z",
+                      "updatedAt": "2026-05-11T20:43:54.343Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "6a023f9ea3f53eb35bf0f004",
+                      "eventId": "69f51871c27668f00b9db24f",
+                      "userId": {
+                        "_id": "69f51a89c27668f00b9db2c9",
+                        "firstName": "Abebe",
+                        "lastName": "Kebede",
+                        "avatar": "https://ethiolotteryimages.s3.us-east-1.amazonaws.com/uploads/87c20684-cefb-4636-81a5-e2bc1f6f2fb1.jpg"
+                      },
+                      "text": "Same here!",
+                      "parentId": "6a023f2da3f53eb35bf0efec",
+                      "createdAt": "2026-05-11T20:44:14.687Z",
+                      "updatedAt": "2026-05-11T20:44:14.687Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "6a023fbfa3f53eb35bf0f010",
+                      "eventId": "69f51871c27668f00b9db24f",
+                      "userId": {
+                        "_id": "69f51a89c27668f00b9db2c9",
+                        "firstName": "Abebe",
+                        "lastName": "Kebede",
+                        "avatar": "https://ethiolotteryimages.s3.us-east-1.amazonaws.com/uploads/87c20684-cefb-4636-81a5-e2bc1f6f2fb1.jpg"
+                      },
+                      "text": "I dont think it is a good idea",
+                      "parentId": "6a023f2da3f53eb35bf0efec",
+                      "createdAt": "2026-05-11T20:44:47.059Z",
+                      "updatedAt": "2026-05-11T20:44:47.059Z",
+                      "__v": 0
+                    }
+                  ]
+                }
+              ],
+              "pagination": {
+                "total": 1,
+                "page": "1",
+                "limit": "20"
+              }
+            }
+          }

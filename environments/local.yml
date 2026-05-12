@@ -1,8 +1,8 @@
 name: local
 variables:
   - name: baseUrl
-    value: http://localhost:8001/api/v1
+    value: http://localhost:4006/api/v1
   - name: accessToken
-    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjlmNTFhODhjMjc2NjhmMDBiOWRiMmM3IiwidHlwZSI6InVzZXIiLCJpYXQiOjE3Nzc5MDU0MTQsImV4cCI6MTc3NzkwNjMxNH0.URrozXBlzo_yysqy0w0wipbdRlukykJcm-4nDYuy6yU
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjlmNTFhODhjMjc2NjhmMDBiOWRiMmM3IiwidHlwZSI6InVzZXIiLCJpYXQiOjE3Nzg1MzI2ODUsImV4cCI6MTc3ODUzMzU4NX0.znVnZm2IidFkKJiVYVudjNReLg27hEyV9n46TG1_CVo
   - name: superAdminToken
     value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdXBlcl9hZG1pbiI6IjY5ZjUxMGJiNWYxZjZhNDE3OTFmYjU2NCIsInR5cGUiOiJzdXBlcl9hZG1pbiIsImlhdCI6MTc3Nzc1MTY3NiwiZXhwIjoxNzc3NzUyNTc2fQ.8eHFoTO-milYDq6wcGHbCSp9WBUajMlG3X14Eqkm-DI

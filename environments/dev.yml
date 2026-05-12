@@ -1,0 +1,6 @@
+name: dev
+variables:
+  - name: baseUrl
+    value: https://api.event.sofoniasayele.com/api/v1
+  - name: accessToken
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjlmNTFhODhjMjc2NjhmMDBiOWRiMmM3IiwidHlwZSI6InVzZXIiLCJpYXQiOjE3Nzg1MDUwMjIsImV4cCI6MTc3ODUwNTkyMn0.A8VbLWXkz1FI3jRKkqG54dLhKa-Pt6WaNyF1gknO-tg
