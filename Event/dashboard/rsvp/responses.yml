@@ -1,0 +1,105 @@
+info:
+  name: responses
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{baseUrl}}/rsvp/forms/6a04703e333630b67f61c826/responses?page=1&limit=20"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: limit
+      value: "20"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/rsvp/forms/6a04703e333630b67f61c826/responses?page=1&limit=20"
+      method: GET
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: limit
+          value: "20"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "706"
+        - name: etag
+          value: W/"2c2-wkno3Ak4wEQmMESwv8eHjQq3FSg"
+        - name: date
+          value: Wed, 13 May 2026 13:02:00 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Responses retrieved successfully",
+            "data": {
+              "items": [
+                {
+                  "_id": "6a0475e7333630b67f61c85e",
+                  "formId": "6a04703e333630b67f61c826",
+                  "eventId": "69f1ff9fdabc17ac0ce702f5",
+                  "email": "abebe@example.com",
+                  "phone": "+251911234567",
+                  "answers": [
+                    {
+                      "questionId": "firstName",
+                      "label": "First Name",
+                      "value": "Abebe"
+                    },
+                    {
+                      "questionId": "lastName",
+                      "label": "Last Name",
+                      "value": "Kebede"
+                    },
+                    {
+                      "questionId": "email",
+                      "label": "Email",
+                      "value": "abebe@example.com"
+                    },
+                    {
+                      "questionId": "phone",
+                      "label": "Phone",
+                      "value": "+251911234567"
+                    }
+                  ],
+                  "status": "confirmed",
+                  "submittedAt": "2026-05-13T13:00:23.706Z",
+                  "createdAt": "2026-05-13T13:00:23.717Z",
+                  "updatedAt": "2026-05-13T13:00:23.717Z",
+                  "__v": 0
+                }
+              ],
+              "pagination": {
+                "total": 1,
+                "page": "1",
+                "limit": "20"
+              }
+            }
+          }

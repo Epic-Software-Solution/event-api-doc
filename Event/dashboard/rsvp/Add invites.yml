@@ -1,0 +1,72 @@
+info:
+  name: Add invites
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/rsvp/forms/6a04703e333630b67f61c826/invites"
+  body:
+    type: json
+    data: |-
+      {
+        "contacts": [
+          { "contact": "abebe@example.com",  "contactType": "email" },
+          { "contact": "kebede@example.com", "contactType": "email" },
+          { "contact": "+251911234567",      "contactType": "phone" }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/rsvp/forms/6a04703e333630b67f61c826/invites"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "contacts": [
+              { "contact": "abebe@example.com",  "contactType": "email" },
+              { "contact": "kebede@example.com", "contactType": "email" },
+              { "contact": "+251911234567",      "contactType": "phone" }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "86"
+        - name: etag
+          value: W/"56-l7Aot6TihsmkZfDWV2FjI25Owzw"
+        - name: date
+          value: Wed, 13 May 2026 12:38:37 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Invites added successfully",
+            "data": {
+              "added": 3,
+              "skipped": 0
+            }
+          }

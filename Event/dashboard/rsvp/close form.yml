@@ -1,0 +1,15 @@
+info:
+  name: close form
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{baseUrl}}/rsvp/forms/6a04703e333630b67f61c826/close"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

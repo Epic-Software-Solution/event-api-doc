@@ -1,0 +1,95 @@
+info:
+  name: check invitation
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{baseUrl}}/rsvp/rsvp-0ce702f5-1dd1bbdb/check"
+  body:
+    type: json
+    data: '{ "contact": "abebew@example.com", "contactType": "email" }'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/rsvp/rsvp-0ce702f5-1dd1bbdb/check"
+      method: POST
+      body:
+        type: json
+        data: '{ "contact": "abebew@example.com", "contactType": "email" }'
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "67"
+        - name: etag
+          value: W/"43-RqBdW2XmDezfFbf/C+uLBso/4zM"
+        - name: date
+          value: Wed, 13 May 2026 12:57:43 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Check complete",
+            "data": {
+              "allowed": true
+            }
+          }
+  - name: example (1)
+    request:
+      url: "{{baseUrl}}/rsvp/rsvp-0ce702f5-1dd1bbdb/check"
+      method: POST
+      body:
+        type: json
+        data: '{ "contact": "abebew@example.com", "contactType": "email" }'
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "126"
+        - name: etag
+          value: W/"7e-ZPQyH2Gd6swVLXc/LoK56wD02cc"
+        - name: date
+          value: Wed, 13 May 2026 12:58:03 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Check complete",
+            "data": {
+              "allowed": false,
+              "message": "Registration is closed for non-invited guests"
+            }
+          }

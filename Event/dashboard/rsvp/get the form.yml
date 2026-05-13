@@ -1,0 +1,188 @@
+info:
+  name: get the form
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{baseUrl}}/rsvp/rsvp-0ce702f5-1dd1bbdb"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/rsvp/rsvp-0ce702f5-1dd1bbdb"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "2488"
+        - name: etag
+          value: W/"9b8-Ypdx3EaLeVbR6H5VULbh4QZoMI4"
+        - name: date
+          value: Wed, 13 May 2026 12:42:24 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Form retrieved successfully",
+            "data": {
+              "form": {
+                "_id": "6a04703e333630b67f61c826",
+                "eventId": "69f1ff9fdabc17ac0ce702f5",
+                "organizerId": "698dd69273b7ac05ec213607",
+                "accessMode": "invite_only",
+                "status": "published",
+                "standardFields": {
+                  "firstName": {
+                    "enabled": true,
+                    "required": true
+                  },
+                  "lastName": {
+                    "enabled": true,
+                    "required": true
+                  },
+                  "email": {
+                    "enabled": true,
+                    "required": true
+                  },
+                  "phone": {
+                    "enabled": true,
+                    "required": false
+                  },
+                  "company": {
+                    "enabled": true,
+                    "required": false
+                  },
+                  "numberOfGuests": {
+                    "enabled": true,
+                    "required": false
+                  },
+                  "jobTitle": {
+                    "enabled": false,
+                    "required": false
+                  },
+                  "dietaryRestrictions": {
+                    "enabled": false,
+                    "required": false
+                  }
+                },
+                "customQuestions": [
+                  {
+                    "label": "What are you most excited about?",
+                    "type": "select",
+                    "options": [
+                      "Networking",
+                      "Speakers",
+                      "Workshops",
+                      "All of the above"
+                    ],
+                    "required": true,
+                    "order": 1,
+                    "_id": "6a04703e333630b67f61c827"
+                  },
+                  {
+                    "label": "Any dietary restrictions?",
+                    "type": "text",
+                    "options": [],
+                    "required": false,
+                    "order": 2,
+                    "_id": "6a04703e333630b67f61c828"
+                  }
+                ],
+                "payment": {
+                  "enabled": false,
+                  "amount": 0,
+                  "currency": "ETB"
+                },
+                "maxResponses": 200,
+                "createdAt": "2026-05-13T12:36:14.553Z",
+                "updatedAt": "2026-05-13T12:41:06.154Z",
+                "__v": 0,
+                "slug": "rsvp-0ce702f5-1dd1bbdb"
+              },
+              "event": {
+                "_id": "69f1ff9fdabc17ac0ce702f5",
+                "organizerId": {
+                  "_id": "698dd69273b7ac05ec213607",
+                  "organizationName": "Epic",
+                  "slug": "epic"
+                },
+                "title": "Afro Music Festival 20268",
+                "slug": "addis-music-festival-20268",
+                "description": "A full-day live music experience.",
+                "shortDescription": "Live music festival",
+                "timeZone": "Africa/Addis_Ababa",
+                "categoryId": null,
+                "tags": [
+                  "music",
+                  "festival",
+                  "live"
+                ],
+                "sponsors": [
+                  {
+                    "name": "Ethio Telecom",
+                    "image": "https://cdn.example.com/sponsors/ethio-telecom.png"
+                  },
+                  {
+                    "name": "Dashen Bank",
+                    "image": "https://cdn.example.com/sponsors/dashen-bank.png"
+                  }
+                ],
+                "media": {
+                  "image": "https://ethiolotteryimages.s3.us-east-1.amazonaws.com/events/media/images/4dc7525e-af24-44d3-b698-4a45f65bad7f.jpg",
+                  "bannerImage": "https://cdn.example.com/events/amf-banner.jpg",
+                  "gallery": [
+                    "https://cdn.example.com/events/amf-1.jpg",
+                    "https://cdn.example.com/events/amf-2.jpg"
+                  ],
+                  "videoUrl": "https://cdn.example.com/events/amf-trailer.mp4"
+                },
+                "pricing": {
+                  "mode": "paid",
+                  "currency": "USD",
+                  "display": {
+                    "fromMinor": 50000,
+                    "toMinor": 50000,
+                    "label": "From 500 USD"
+                  },
+                  "suggestedAmountsMinor": [
+                    50000
+                  ],
+                  "taxInclusive": false,
+                  "feesPaidBy": "ATTENDEE"
+                },
+                "status": "draft",
+                "visibility": "public",
+                "kind": "ticketed",
+                "recurrence": {
+                  "enabled": false,
+                  "exceptions": []
+                },
+                "createdAt": "2026-04-29T12:54:56.005Z",
+                "updatedAt": "2026-05-07T11:18:52.396Z",
+                "__v": 0,
+                "organizationName": "Epic",
+                "categoryName": null
+              }
+            }
+          }

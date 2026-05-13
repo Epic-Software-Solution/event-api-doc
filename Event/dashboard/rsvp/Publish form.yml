@@ -1,0 +1,125 @@
+info:
+  name: Publish form
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/rsvp/forms/6a04703e333630b67f61c826/publish"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/rsvp/forms/6a04703e333630b67f61c826/publish"
+      method: POST
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "1190"
+        - name: etag
+          value: W/"4a6-lDovwYiXsoa0wogAumbt+aZkBxE"
+        - name: date
+          value: Wed, 13 May 2026 12:41:06 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "RSVP form published successfully",
+            "data": {
+              "form": {
+                "_id": "6a04703e333630b67f61c826",
+                "eventId": "69f1ff9fdabc17ac0ce702f5",
+                "organizerId": "698dd69273b7ac05ec213607",
+                "accessMode": "invite_only",
+                "status": "published",
+                "standardFields": {
+                  "firstName": {
+                    "enabled": true,
+                    "required": true
+                  },
+                  "lastName": {
+                    "enabled": true,
+                    "required": true
+                  },
+                  "email": {
+                    "enabled": true,
+                    "required": true
+                  },
+                  "phone": {
+                    "enabled": true,
+                    "required": false
+                  },
+                  "company": {
+                    "enabled": true,
+                    "required": false
+                  },
+                  "numberOfGuests": {
+                    "enabled": true,
+                    "required": false
+                  },
+                  "jobTitle": {
+                    "enabled": false,
+                    "required": false
+                  },
+                  "dietaryRestrictions": {
+                    "enabled": false,
+                    "required": false
+                  }
+                },
+                "customQuestions": [
+                  {
+                    "label": "What are you most excited about?",
+                    "type": "select",
+                    "options": [
+                      "Networking",
+                      "Speakers",
+                      "Workshops",
+                      "All of the above"
+                    ],
+                    "required": true,
+                    "order": 1,
+                    "_id": "6a04703e333630b67f61c827"
+                  },
+                  {
+                    "label": "Any dietary restrictions?",
+                    "type": "text",
+                    "options": [],
+                    "required": false,
+                    "order": 2,
+                    "_id": "6a04703e333630b67f61c828"
+                  }
+                ],
+                "payment": {
+                  "enabled": false,
+                  "amount": 0,
+                  "currency": "ETB"
+                },
+                "maxResponses": 200,
+                "createdAt": "2026-05-13T12:36:14.553Z",
+                "updatedAt": "2026-05-13T12:41:06.154Z",
+                "__v": 0,
+                "slug": "rsvp-0ce702f5-1dd1bbdb"
+              },
+              "link": "/rsvp/rsvp-0ce702f5-1dd1bbdb"
+            }
+          }

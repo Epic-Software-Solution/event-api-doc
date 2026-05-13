@@ -1,0 +1,15 @@
+info:
+  name: get team
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: "{{baseUrl}}/organizers/team"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

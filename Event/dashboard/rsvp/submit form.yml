@@ -1,0 +1,108 @@
+info:
+  name: submit form
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{baseUrl}}/rsvp/rsvp-0ce702f5-1dd1bbdb/submit"
+  body:
+    type: json
+    data: |-
+      {
+        "answers": [
+          { "questionId": "firstName", "label": "First Name",  "value": "Abebe" },
+          { "questionId": "lastName",  "label": "Last Name",   "value": "Kebede" },
+          { "questionId": "email",     "label": "Email",       "value": "abebe@example.com" },
+          { "questionId": "phone",     "label": "Phone",       "value": "+251911234567" }
+      //     { "questionId": "{{customQuestionId}}", "label": "What are you most excited about?", "value": "Networking" }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/rsvp/rsvp-0ce702f5-1dd1bbdb/submit"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "answers": [
+              { "questionId": "firstName", "label": "First Name",  "value": "Abebe" },
+              { "questionId": "lastName",  "label": "Last Name",   "value": "Kebede" },
+              { "questionId": "email",     "label": "Email",       "value": "abebe@example.com" },
+              { "questionId": "phone",     "label": "Phone",       "value": "+251911234567" }
+          //     { "questionId": "{{customQuestionId}}", "label": "What are you most excited about?", "value": "Networking" }
+            ]
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "649"
+        - name: etag
+          value: W/"289-Z4/YX8KliP6oyDw0eAqzWdxwSxw"
+        - name: date
+          value: Wed, 13 May 2026 13:00:24 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Registration successful",
+            "data": {
+              "response": {
+                "formId": "6a04703e333630b67f61c826",
+                "eventId": "69f1ff9fdabc17ac0ce702f5",
+                "email": "abebe@example.com",
+                "phone": "+251911234567",
+                "answers": [
+                  {
+                    "questionId": "firstName",
+                    "label": "First Name",
+                    "value": "Abebe"
+                  },
+                  {
+                    "questionId": "lastName",
+                    "label": "Last Name",
+                    "value": "Kebede"
+                  },
+                  {
+                    "questionId": "email",
+                    "label": "Email",
+                    "value": "abebe@example.com"
+                  },
+                  {
+                    "questionId": "phone",
+                    "label": "Phone",
+                    "value": "+251911234567"
+                  }
+                ],
+                "status": "confirmed",
+                "_id": "6a0475e7333630b67f61c85e",
+                "submittedAt": "2026-05-13T13:00:23.706Z",
+                "createdAt": "2026-05-13T13:00:23.717Z",
+                "updatedAt": "2026-05-13T13:00:23.717Z",
+                "__v": 0
+              }
+            }
+          }

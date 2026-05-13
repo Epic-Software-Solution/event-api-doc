@@ -1,0 +1,187 @@
+info:
+  name: " Create form"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/rsvp/forms"
+  body:
+    type: json
+    data: |-
+      {
+        "eventId": "69f1ff9fdabc17ac0ce702f5",
+        "accessMode": "invite_only",
+        "standardFields": {
+          "firstName":  { "enabled": true, "required": true },
+          "lastName":   { "enabled": true, "required": true },
+          "email":      { "enabled": true, "required": true },
+          "phone":      { "enabled": true, "required": false },
+          "company":    { "enabled": true, "required": false },
+          "numberOfGuests": { "enabled": true, "required": false }
+        },
+        "customQuestions": [
+          {
+            "label": "What are you most excited about?",
+            "type": "select",
+            "options": ["Networking", "Speakers", "Workshops", "All of the above"],
+            "required": true,
+            "order": 1
+          },
+          {
+            "label": "Any dietary restrictions?",
+            "type": "text",
+            "required": false,
+            "order": 2
+          }
+        ],
+        "payment": { "enabled": false, "amount": 0, "currency": "ETB" },
+        "maxResponses": 200
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/rsvp/forms"
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "eventId": "69f1ff9fdabc17ac0ce702f5",
+            "accessMode": "invite_only",
+            "standardFields": {
+              "firstName":  { "enabled": true, "required": true },
+              "lastName":   { "enabled": true, "required": true },
+              "email":      { "enabled": true, "required": true },
+              "phone":      { "enabled": true, "required": false },
+              "company":    { "enabled": true, "required": false },
+              "numberOfGuests": { "enabled": true, "required": false }
+            },
+            "customQuestions": [
+              {
+                "label": "What are you most excited about?",
+                "type": "select",
+                "options": ["Networking", "Speakers", "Workshops", "All of the above"],
+                "required": true,
+                "order": 1
+              },
+              {
+                "label": "Any dietary restrictions?",
+                "type": "text",
+                "required": false,
+                "order": 2
+              }
+            ],
+            "payment": { "enabled": false, "amount": 0, "currency": "ETB" },
+            "maxResponses": 200
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "1114"
+        - name: etag
+          value: W/"45a-qAeiP5J7JF/ZVvdOQpuXSDrEko8"
+        - name: date
+          value: Wed, 13 May 2026 12:36:14 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "RSVP form created successfully",
+            "data": {
+              "form": {
+                "eventId": "69f1ff9fdabc17ac0ce702f5",
+                "organizerId": "698dd69273b7ac05ec213607",
+                "accessMode": "invite_only",
+                "status": "draft",
+                "standardFields": {
+                  "firstName": {
+                    "enabled": true,
+                    "required": true
+                  },
+                  "lastName": {
+                    "enabled": true,
+                    "required": true
+                  },
+                  "email": {
+                    "enabled": true,
+                    "required": true
+                  },
+                  "phone": {
+                    "enabled": true,
+                    "required": false
+                  },
+                  "company": {
+                    "enabled": true,
+                    "required": false
+                  },
+                  "numberOfGuests": {
+                    "enabled": true,
+                    "required": false
+                  },
+                  "jobTitle": {
+                    "enabled": false,
+                    "required": false
+                  },
+                  "dietaryRestrictions": {
+                    "enabled": false,
+                    "required": false
+                  }
+                },
+                "customQuestions": [
+                  {
+                    "label": "What are you most excited about?",
+                    "type": "select",
+                    "options": [
+                      "Networking",
+                      "Speakers",
+                      "Workshops",
+                      "All of the above"
+                    ],
+                    "required": true,
+                    "order": 1,
+                    "_id": "6a04703e333630b67f61c827"
+                  },
+                  {
+                    "label": "Any dietary restrictions?",
+                    "type": "text",
+                    "options": [],
+                    "required": false,
+                    "order": 2,
+                    "_id": "6a04703e333630b67f61c828"
+                  }
+                ],
+                "payment": {
+                  "enabled": false,
+                  "amount": 0,
+                  "currency": "ETB"
+                },
+                "maxResponses": 200,
+                "_id": "6a04703e333630b67f61c826",
+                "createdAt": "2026-05-13T12:36:14.553Z",
+                "updatedAt": "2026-05-13T12:36:14.553Z",
+                "__v": 0
+              }
+            }
+          }

@@ -1,0 +1,48 @@
+info:
+  name: export to csv
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{baseUrl}}/rsvp/forms/6a04703e333630b67f61c826/responses/export"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/rsvp/forms/6a04703e333630b67f61c826/responses/export"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: text/csv; charset=utf-8
+        - name: content-disposition
+          value: attachment; filename="rsvp-responses-6a04703e333630b67f61c826.csv"
+        - name: content-length
+          value: "192"
+        - name: etag
+          value: W/"c0-lOwOt8qu/o810TW11D1+jcz8dPE"
+        - name: date
+          value: Wed, 13 May 2026 13:02:49 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: text
+        data: |-
+          Email,Phone,Status,Submitted At,First Name,Last Name,Email,Phone
+          "abebe@example.com","+251911234567","confirmed","2026-05-13T13:00:23.706Z","Abebe","Kebede","abebe@example.com","+251911234567"
