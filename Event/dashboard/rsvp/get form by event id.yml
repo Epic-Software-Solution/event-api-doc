@@ -1,11 +1,11 @@
 info:
-  name: close form
+  name: get form by event id
   type: http
-  seq: 9
+  seq: 10
 
 http:
-  method: POST
-  url: "{{baseUrl}}/rsvp/forms/6a04703e333630b67f61c826/close"
+  method: GET
+  url: "{{baseUrl}}/rsvp/forms/event/69f1f2b60aada6c35f544ab4"
   auth: inherit
 
 settings:
@@ -17,8 +17,8 @@ settings:
 examples:
   - name: example
     request:
-      url: "{{baseUrl}}/rsvp/forms/6a04703e333630b67f61c826/close"
-      method: POST
+      url: "{{baseUrl}}/rsvp/forms/event/69f1f2b60aada6c35f544ab4"
+      method: GET
     response:
       status: 200
       statusText: OK
@@ -30,11 +30,11 @@ examples:
         - name: content-type
           value: application/json; charset=utf-8
         - name: content-length
-          value: "1146"
+          value: "953"
         - name: etag
-          value: W/"47a-Hw22FBm8QVoTizgcbVJ5ESa/4PA"
+          value: W/"3b9-bTm2mKP2wTuN7wc6gplIRPwq0P4"
         - name: date
-          value: Wed, 13 May 2026 13:03:38 GMT
+          value: Wed, 13 May 2026 13:57:35 GMT
         - name: connection
           value: keep-alive
         - name: keep-alive
@@ -44,14 +44,14 @@ examples:
         data: |-
           {
             "success": true,
-            "message": "RSVP form closed successfully",
+            "message": "RSVP form retrieved successfully",
             "data": {
               "form": {
-                "_id": "6a04703e333630b67f61c826",
-                "eventId": "69f1ff9fdabc17ac0ce702f5",
+                "_id": "6a047d3d4b1aebec78ccd903",
+                "eventId": "69f1f2b60aada6c35f544ab4",
                 "organizerId": "698dd69273b7ac05ec213607",
-                "accessMode": "invite_only",
-                "status": "closed",
+                "accessMode": "open",
+                "status": "published",
                 "standardFields": {
                   "firstName": {
                     "enabled": true,
@@ -70,11 +70,7 @@ examples:
                     "required": false
                   },
                   "company": {
-                    "enabled": true,
-                    "required": false
-                  },
-                  "numberOfGuests": {
-                    "enabled": true,
+                    "enabled": false,
                     "required": false
                   },
                   "jobTitle": {
@@ -84,29 +80,20 @@ examples:
                   "dietaryRestrictions": {
                     "enabled": false,
                     "required": false
+                  },
+                  "numberOfGuests": {
+                    "enabled": false,
+                    "required": false
                   }
                 },
                 "customQuestions": [
                   {
-                    "label": "What are you most excited about?",
-                    "type": "select",
-                    "options": [
-                      "Networking",
-                      "Speakers",
-                      "Workshops",
-                      "All of the above"
-                    ],
-                    "required": true,
-                    "order": 1,
-                    "_id": "6a04703e333630b67f61c827"
-                  },
-                  {
-                    "label": "Any dietary restrictions?",
+                    "label": "Any Hobbies Please",
                     "type": "text",
                     "options": [],
                     "required": false,
-                    "order": 2,
-                    "_id": "6a04703e333630b67f61c828"
+                    "order": 1,
+                    "_id": "6a047d3d4b1aebec78ccd904"
                   }
                 ],
                 "payment": {
@@ -114,11 +101,11 @@ examples:
                   "amount": 0,
                   "currency": "ETB"
                 },
-                "maxResponses": 200,
-                "createdAt": "2026-05-13T12:36:14.553Z",
-                "updatedAt": "2026-05-13T13:03:38.589Z",
+                "maxResponses": 500,
+                "createdAt": "2026-05-13T13:31:41.560Z",
+                "updatedAt": "2026-05-13T13:54:59.193Z",
                 "__v": 0,
-                "slug": "rsvp-0ce702f5-1dd1bbdb"
+                "slug": "rsvp-5f544ab4-226de772"
               }
             }
           }
