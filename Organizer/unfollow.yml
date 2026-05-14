@@ -1,0 +1,51 @@
+info:
+  name: unfollow
+  type: http
+  seq: 14
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/organizers/698dd69273b7ac05ec213607/follow"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/organizers/698dd69273b7ac05ec213607/follow"
+      method: DELETE
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "79"
+        - name: etag
+          value: W/"4f-Fzi00eHOjsqem7UocBO3rA7jYEU"
+        - name: date
+          value: Thu, 14 May 2026 13:00:11 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Unfollowed successfully",
+            "data": {
+              "following": false
+            }
+          }
