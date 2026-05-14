@@ -1,0 +1,56 @@
+info:
+  name: organizer's events
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{baseUrl}}/events/organizer/6a040bee9528c5432c2fbced"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/events/organizer/6a040bee9528c5432c2fbced"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "123"
+        - name: etag
+          value: W/"7b-7nlVcnzcPlZvFwFOKkgumVSuJic"
+        - name: date
+          value: Thu, 14 May 2026 12:24:16 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Events retrieved successfully",
+            "data": {
+              "items": [],
+              "pagination": {
+                "total": 0,
+                "page": 1,
+                "limit": 20
+              }
+            }
+          }

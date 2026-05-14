@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}/rsvp/forms/6a04703e333630b67f61c826/publish"
+  url: "{{baseUrl}}/rsvp/forms/6a047d3d4b1aebec78ccd903/publish"
   auth: inherit
 
 settings:
