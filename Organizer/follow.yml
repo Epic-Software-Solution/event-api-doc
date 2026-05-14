@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}/organizers/69f8508dc9cf331b865970fe/follow"
+  url: "{{baseUrl}}/organizers/698dd69273b7ac05ec213607/follow"
   auth: inherit
 
 settings:
@@ -13,3 +13,39 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/organizers/698dd69273b7ac05ec213607/follow"
+      method: POST
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-expose-headers
+          value: Authorization, RefreshToken
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "76"
+        - name: etag
+          value: W/"4c-dv7B2rmczc1hBHEeUoKcn9TWXl0"
+        - name: date
+          value: Thu, 14 May 2026 12:57:15 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Followed successfully",
+            "data": {
+              "following": true
+            }
+          }
